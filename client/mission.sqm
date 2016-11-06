@@ -278,7 +278,7 @@ class Mission
 	class Intel
 	{
 		briefingName="TacticalGaming.net/HQ Invade & Annex";
-		overviewText="Invade & Annex v.3 || JediNarwals [TG] v.1.3";
+		overviewText="Invade & Annex v.3 || TG v.1.5";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;

@@ -5,9 +5,9 @@
 
 //=================== On Load
 
-author = "Rarek [AW] & JediNarwals [TG]";
+author = "Rarek [AW] & JediNarwals [TG] & Bornasm [TG]";
 overviewText = "Be part of the community at www.TacticalGaming.com\HQ.";
-OnLoadName = "Invade & Annex v.3 || JediNarwals [TG] v.1.3";
+OnLoadName = "Invade & Annex v.3 || TG v.1.5";
 OnLoadMission = "Be part of the community at www.TacticalGaming.com\HQ.";
 loadScreen = "images\loadingScreen.jpg";
 overviewPicture = "images\loadingScreen.jpg";

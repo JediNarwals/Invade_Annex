@@ -68,6 +68,7 @@ JEDI_ID_PlayerTags = ["JEDI_PlayerTags","onEachFrame","jedi_fnc_playerTags"] cal
 	};
 };
 
+/*
 //------------------- Adds nametags to people (Hopefully)
 
 [] spawn
@@ -84,3 +85,4 @@ JEDI_ID_PlayerTags = ["JEDI_PlayerTags","onEachFrame","jedi_fnc_playerTags"] cal
 		sleep 1.3;
 	};
 };
+*/
