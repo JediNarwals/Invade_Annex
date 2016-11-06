@@ -18,7 +18,7 @@ enableDebugConsole = 0;										// Turns ingame debug console on. 0 = Disabled,
 allowFunctionsLog = 0;										// Function logs for server.
 joinUnassigned = 1;											// Will have a player outside a slot on connect. 0 = Disabled, 1 = Enabled.
 onPauseScript = "scripts\onPause.sqf";						// Sets a script to activate once ESC menu pressed.
-disableChannels[] = {0,2,6};								// 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System. Admin/server/BattlEye can still use Global.
+disableChannels[] = {0,6};									// 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System. Admin/server/BattlEye can still use Global.
 
 class Header
 {
