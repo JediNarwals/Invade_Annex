@@ -9,7 +9,7 @@
 private["_display","_alpha","_p","_pg"];
 disableSerialization;
 _display = findDisplay 46;
-_alpha = _display displayCtrl 32113;
+_alpha = _display displayCtrl 55555;
 
 2 cutRsc ["jediHud","PLAIN"];
 [] call jedi_fnc_hudUpdate;
@@ -78,7 +78,7 @@ _alpha = _display displayCtrl 32113;
 		if(_damage < 1) then{_colourDamage =  _colourDead;};
 */
 		//display the information
-		((uiNamespace getVariable "jediHud")displayCtrl 32113)ctrlSetStructuredText parseText
+		((uiNamespace getVariable "jediHud")displayCtrl 55555)ctrlSetStructuredText parseText
 			format["
 			<t shadow='1' shadowColor='#000000' color='%5' size='1.6' align='center'><img size='1.6'  shadowColor='#000000' image='images\health.paa' color='%5'/> %3%1</t>
 			<t shadow='1' shadowColor='#000000' color='%4' size='1.2' align='center'><a href='http://www.tacticalgaming.net/hq'>Website: TacticalGaming.net\hq</a></t>
