@@ -1,7 +1,9 @@
 /*
-	File: vehicleService.sqf
-	Author: JediNarwals
+	@file:				vehicleService.sqf
+	@author:			JediNarwals [TG]
+	@description:		Services vehicles that go on designated triggers.
 */
+
 if (isServer) exitWith {};
 if (isDedicated) exitWith {};
 
@@ -37,7 +39,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air") OR (
 			uiSleep 0.27;
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
-			_pgText ctrlSetText hint format[localize"%3...",round(_cP * 100),"%",_upp];
+			_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 			if(_cP >= 1) exitWith { };
 			if(isEngineOn _veh) exitWith {life_interrupted = true;};
 			if(!alive player) exitWith {life_interrupted = true;};
