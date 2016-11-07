@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Destroy Chopper">*/
+/*%FSM<COMPILE "scriptedFSM.cfg, Destroy Chopper">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Destroy_Chopper",0,4346,561.933350,492.182953,661.933228,542.182922,0.000000,"Destroy" \n "Chopper Side MIssion"};
@@ -21,114 +21,121 @@ link6[] = {5,8};
 link7[] = {6,7};
 link8[] = {8,2};
 link9[] = {9,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,21,6316128,1,148.338150,1171.237793,1169.633911,389.312531,1204,911,1};
-window[] = {2,-1,-1,-1,-1,960,200,1640,200,3,1222};
+globals[] = {0.000000,0,0,0,0,640,480,1,21,6316128,1,148.338150,1171.237793,1169.633911,389.312531,884,589,1};
+window[] = {0,-1,-1,-1,-1,854,1955,3395,94,1,902};
 *//*%FSM</HEAD>*/
 class FSM
 {
-  fsmName = "Destroy Chopper";
-  class States
-  {
-    /*%FSM<STATE "Destroy_Chopper">*/
-    class Destroy_Chopper
-    {
-      name = "Destroy_Chopper";
-      init = /*%FSM<STATEINIT""">*/"_pos = _this select 0; " \n
-       "" \n
-       "_randomDir = (random 360);" \n
-       "_hangar = ""Land_TentHangar_V1_F"" createVehicle _pos;" \n
-       "_hangar setPos [(getPos _hangar select 0), (getPos _hangar select 1), ((getPos _hangar select 2) - 1)];" \n
-       "_chopper = ""O_Heli_Light_02_F"" createVehicle _pos;" \n
-       "{_x setDir _randomDir;} forEach [_chopper, _hangar];" \n
-       "_radius = 150;" \n
-       "" \n
-       "_spawnedUnits = [EAST, 6, _pos, 200] call AW_fnc_spawnEnemy;" \n
-       "_behaviours = [[""defend"", _pos, _radius], [""patrol"", _pos, _radius]];" \n
-       "[_spawnedUnits, _behaviours] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Ready_">*/
-        class Ready_
+        fsmName = "Destroy Chopper";
+        class States
         {
-          priority = 0.000000;
-          to="Set_timeout___";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                /*%FSM<STATE "Destroy_Chopper">*/
+                class Destroy_Chopper
+                {
+                        name = "Destroy_Chopper";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_pos = _this select 0; " \n
+                         "" \n
+                         "_randomDir = (random 360);" \n
+                         "_hangar = ""Land_TentHangar_V1_F"" createVehicle _pos;" \n
+                         "_hangar setPos [(getPos _hangar select 0), (getPos _hangar select 1), ((getPos _hangar select 2) - 1)];" \n
+                         "_chopper = ""O_Heli_Light_02_F"" createVehicle _pos;" \n
+                         "{_x setDir _randomDir;} forEach [_chopper, _hangar];" \n
+                         "_radius = 150;" \n
+                         "" \n
+                         "_spawnedUnits = [EAST, 6, _pos, 600] call AW_fnc_spawnEnemy;" \n
+                         "[_spawnedUnits, [[""defend"", true, 200]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Ready_">*/
+                                class Ready_
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Set_timeout___";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Set_timeout___">*/
+                class Set_timeout___
+                {
+                        name = "Set_timeout___";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_timeout = (time + 5 + (random 10));"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Ready_to_check_">*/
+                                class Ready_to_check_
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Is_the_Chopper_dead";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Is_the_Chopper_dead">*/
+                class Is_the_Chopper_dead
+                {
+                        name = "Is_the_Chopper_dead";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Yes">*/
+                                class Yes
+                                {
+                                        itemno = 6;
+                                        priority = 1.000000;
+                                        to="Completed_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _chopper"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "No">*/
+                                class No
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="Set_timeout___";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Completed_">*/
+                class Completed_
+                {
+                        name = "Completed_";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"result = true;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
         };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Set_timeout___">*/
-    class Set_timeout___
-    {
-      name = "Set_timeout___";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + 5 + (random 10));"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Ready_to_check_">*/
-        class Ready_to_check_
+        initState="Destroy_Chopper";
+        finalStates[] =
         {
-          priority = 0.000000;
-          to="Is_the_Chopper_dead";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                "Completed_",
         };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Is_the_Chopper_dead">*/
-    class Is_the_Chopper_dead
-    {
-      name = "Is_the_Chopper_dead";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Yes">*/
-        class Yes
-        {
-          priority = 1.000000;
-          to="Completed_";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!alive _chopper"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "No">*/
-        class No
-        {
-          priority = 0.000000;
-          to="Set_timeout___";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Completed_">*/
-    class Completed_
-    {
-      name = "Completed_";
-      init = /*%FSM<STATEINIT""">*/"result = true;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-      };
-    };
-    /*%FSM</STATE>*/
-  };
-  initState="Destroy_Chopper";
-  finalStates[] =
-  {
-    "Completed_",
-  };
 };
 /*%FSM</COMPILE>*/
