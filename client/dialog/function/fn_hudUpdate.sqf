@@ -15,7 +15,7 @@ if(isNull _ui) then {[] call jedi_fnc_hudSetup;};
 
 		//set the color values.
 		//Additional color codes can be found here:  http://html-color-codes.com/
-		_colourDefault 	= parseText "#adadad"; //set your default colour here
+		_colourDefault 	= parseText "#ADADAD"; //set your default colour here
 		_colour108		= parseText "#FF7000";
 		_colour107		= parseText "#FF9000";
 		_colour106		= parseText "#FFBB00";
@@ -25,7 +25,7 @@ if(isNull _ui) then {[] call jedi_fnc_hudSetup;};
 		_colour102		= parseText "#3388CC";
 		_colour101		= parseText "#3366CC";
 		_colour100 		= parseText "#336600";
-		_colour90 		= parseText "#339900";
+		_colour90 		= parseText "#3FD600";
 		_colour80 		= parseText "#33CC00";
 		_colour70 		= parseText "#33FF00";
 		_colour60 		= parseText "#66FF00";
@@ -49,17 +49,17 @@ _control = _ui displayCtrl 55555;
 
 		_colourDamage = switch (true) do
 		{
-			case (_damage < 1) : { "000000" };
-			case (_damage < 10): { "CC3300" };
-			case (_damage < 20): { "CC6600" };
-			case (_damage < 30): { "CC9900" };
-			case (_damage < 40): { "CCCC00" };
-			case (_damage < 50): { "CCFF00" };
-			case (_damage < 60): { "66FF00" };
-			case (_damage < 70): { "33FF00" };
-			case (_damage < 80): { "33CC00" };
-			case (_damage < 90): { "339900" };
-			default { "339900" };
+			case (_damage < 1) : { "#000000" };
+			case (_damage < 10): { "#CC3300" };
+			case (_damage < 20): { "#CC6600" };
+			case (_damage < 30): { "#CC9900" };
+			case (_damage < 40): { "#CCCC00" };
+			case (_damage < 50): { "#CCFF00" };
+			case (_damage < 60): { "#66FF00" };
+			case (_damage < 70): { "#33FF00" };
+			case (_damage < 80): { "#33CC00" };
+			case (_damage < 90): { "#3FD600" };
+			default { "#3FD600" };
 		};
 /*
 		_colourDamage = _colourDefault;
