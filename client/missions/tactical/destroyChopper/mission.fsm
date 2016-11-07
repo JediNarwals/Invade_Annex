@@ -1,18 +1,20 @@
 /*%FSM<COMPILE "scriptedFSM.cfg, Destroy Chopper">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Destroy_Chopper",0,4346,561.933350,492.182953,661.933228,542.182922,0.000000,"Destroy" \n "Chopper Side MIssion"};
-item1[] = {"Ready_",8,218,561.933350,567.182922,661.933228,617.182922,0.000000,"Ready!"};
-item2[] = {"Set_timeout___",2,250,561.933350,642.182922,661.933228,692.182922,0.000000,"Set timeout..."};
-item3[] = {"Ready_to_check_",4,218,563.926392,721.833435,663.926270,771.833435,0.000000,"Ready to" \n "check?"};
-item4[] = {"Is_the_Chopper_dead",2,250,560.604675,788.196838,660.604614,838.196838,0.000000,"Is the" \n "Chopper" \n "dead?"};
-item5[] = {"No",8,218,686.933228,717.182922,786.933228,767.182922,0.000000,"No"};
-item6[] = {"Yes",4,218,561.933350,867.182922,661.933228,917.182922,1.000000,"Yes"};
-item7[] = {"Completed_",1,250,561.933350,942.182922,661.933228,992.182922,0.000000,"Completed!"};
-item8[] = {"",7,210,732.933350,663.182922,740.933350,671.182922,0.000000,""};
-item9[] = {"",7,210,732.933350,813.182922,740.933350,821.182922,0.000000,""};
+item0[] = {"Destroy_Chopper",0,250,411.748535,500.282288,511.748352,550.282471,0.000000,"Destroy" \n "Chopper Side MIssion"};
+item1[] = {"Location__Set",8,218,571.440247,500.967712,661.440247,550.967773,0.000000,"Location " \n "Set"};
+item2[] = {"Set_timeout___",2,250,404.702087,667.339905,504.702118,717.339905,0.000000,"Set timeout..."};
+item3[] = {"Ready_to_check_",4,218,403.101288,822.461426,503.101166,872.461426,0.000000,"Ready to" \n "check?"};
+item4[] = {"Is_the_Chopper_dead",2,250,561.476440,824.811584,661.476379,874.811584,0.000000,"Is the" \n "Chopper" \n "dead?"};
+item5[] = {"No",8,218,686.061401,741.592712,786.061401,791.592712,0.000000,"No"};
+item6[] = {"Yes",4,218,561.933350,934.309937,661.933228,984.309937,1.000000,"Yes"};
+item7[] = {"Completed_",1,250,561.933350,1042.437500,661.933228,1092.437500,0.000000,"Completed!"};
+item8[] = {"",7,210,732.933350,690.208008,740.933350,698.208008,0.000000,""};
+item9[] = {"",7,210,733.805176,847.182251,741.805176,855.182251,0.000000,""};
+item10[] = {"Create__Enemies",2,4346,567.338745,575.802979,657.338745,625.803040,0.000000,"Create " \n "Enemies"};
+item11[] = {"Ready_",8,218,410.459808,576.598206,500.459747,626.598206,0.000000,"Ready" \n ""};
 link0[] = {0,1};
-link1[] = {1,2};
+link1[] = {1,10};
 link2[] = {2,3};
 link3[] = {3,4};
 link4[] = {4,6};
@@ -21,8 +23,10 @@ link6[] = {5,8};
 link7[] = {6,7};
 link8[] = {8,2};
 link9[] = {9,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,21,6316128,1,148.338150,1171.237793,1169.633911,389.312531,884,589,1};
-window[] = {0,-1,-1,-1,-1,854,1955,3395,94,1,902};
+link10[] = {10,11};
+link11[] = {11,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,93.987701,1121.867188,1208.782959,452.612335,1203,885,1};
+window[] = {2,-1,-1,-1,-1,860,100,1540,100,3,1221};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -34,26 +38,21 @@ class FSM
                 {
                         name = "Destroy_Chopper";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_pos = _this select 0; " \n
+                        init = /*%FSM<STATEINIT""">*/"_location = _this select 0; " \n
+                         "_pos = getMarkerPos _location;" \n
                          "" \n
-                         "_randomDir = (random 360);" \n
-                         "_hangar = ""Land_TentHangar_V1_F"" createVehicle _pos;" \n
-                         "_hangar setPos [(getPos _hangar select 0), (getPos _hangar select 1), ((getPos _hangar select 2) - 1)];" \n
-                         "_chopper = ""O_Heli_Light_02_F"" createVehicle _pos;" \n
-                         "{_x setDir _randomDir;} forEach [_chopper, _hangar];" \n
-                         "_radius = 150;" \n
                          "" \n
-                         "_spawnedUnits = [EAST, 6, _pos, 600] call AW_fnc_spawnEnemy;" \n
-                         "[_spawnedUnits, [[""defend"", true, 200]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "Ready_">*/
-                                class Ready_
+                                /*%FSM<LINK "Location__Set">*/
+                                class Location__Set
                                 {
                                         itemno = 1;
                                         priority = 0.000000;
-                                        to="Set_timeout___";
+                                        to="Create__Enemies";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -128,6 +127,40 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Create__Enemies">*/
+                class Create__Enemies
+                {
+                        name = "Create__Enemies";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"_location = _this select 0;" \n
+                         "_randomDir = (random 360);" \n
+                         "_hangar = ""Land_TentHangar_V1_F"" createVehicle _location;" \n
+                         "_hangar setPos [(getPos _hangar select 0), (getPos _hangar select 1), ((getPos _hangar select 2) - 1)];" \n
+                         "_chopper = ""O_Heli_Light_02_F"" createVehicle _location;" \n
+                         "{_x setDir _randomDir;} forEach [_chopper, _hangar];" \n
+                         "_radius = 150;" \n
+                         "" \n
+                         "diag_log ""::IA3:: Destroy chopper spawning units:: Dev :: machines\missions.fsm"";" \n
+                         "_spawnedUnits = [EAST, 25, _location, 150] call AW_fnc_spawnEnemy;" \n
+                         "[_spawnedUnits, [[""patrol"", true, 50]]] call AW_fnc_setBehaviour;" \n
+                         "diag_log ""::IA3:: Destroy chopper spawning units:: Dev :: finished"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Ready_">*/
+                                class Ready_
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Set_timeout___";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                         };
                 };
                 /*%FSM</STATE>*/

@@ -291,7 +291,7 @@ class Params
 			title = "Minimum time between Tactical Missions spawning";
 			values[] = {5, 300, 900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
 			texts[] = {"5 seconds (DEV)","5 minutes", "15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
-			default = 300;
+			default = 5;
 		};
 
 		class tacticalMaxTimeBeforeNext
@@ -299,7 +299,7 @@ class Params
 			title = "Maximum time between Tactical Missions spawning";
 			values[] = {60, 900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
 			texts[] = {"1 minute (DEV)", "15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
-			default = 900;
+			default = 60;
 		};
 
 	class gap7

@@ -1,10 +1,9 @@
-//  ZeusPlayerUpdate Loop     //
-//scripts\misc\zeusupdater.sqf//
-//      MykeyRM [AW]          //
-////////////////////////////////
-
-//zeusupdater.sqf
-
+/*
+	@file:		zeusupdater.sqf
+	@author:	JediNarwals [TG]
+	@description:
+				Places objects in zeus for multi zeus usage.
+*/
 waitUntil {time > 3};
 call 
 {
@@ -13,7 +12,7 @@ call
 		objectsToAdd = (entities "AllVehicles" - entities "Animal" - entities "RoadCone_L_F"); 
 		publicVariable "objectsToAdd";
 		{_x addCuratorEditableObjects [(objectsToAdd), true];} foreach allCurators;
-		sleep 300;
+		sleep 30;
 	};
 };
 
