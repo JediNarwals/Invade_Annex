@@ -13,7 +13,7 @@ class jediHud {
 	objects[] = {};
 	class controls {
 		class statusBarText {
-			idc = 32113;
+			idc = 55555;
 			x = safezoneX + safezoneW - 1.90;
 			y = safezoneY + safezoneH - 0.063;
 			w = 1.35;

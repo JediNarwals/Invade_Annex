@@ -10,7 +10,7 @@ private["_ui","_control","_text","_uid"];
 disableSerialization;
 
 _text = "";
-_ui = uiNameSpace getVariable ["jediHud7",displayNull];
+_ui = uiNameSpace getVariable ["jediHud",displayNull];
 if(isNull _ui) then {[] call jedi_fnc_hudSetup;};
 
 		//set the color values.
@@ -39,7 +39,7 @@ if(isNull _ui) then {[] call jedi_fnc_hudSetup;};
 		_uid = getPlayerUID player;
 
 
-_control = _ui displayCtrl 32113;
+_control = _ui displayCtrl 55555;
 
 		//initialize variables and set values
 		_damage = round ((1 - (damage player)) * 100);
@@ -77,7 +77,7 @@ _control = _ui displayCtrl 32113;
 		if(_damage < 1) then{_colourDamage =  _colourDead;};
 */
 		//display the information
-		((uiNamespace getVariable "osefStatusBar")displayCtrl 32113)ctrlSetStructuredText parseText
+		((uiNamespace getVariable "osefStatusBar")displayCtrl 55555)ctrlSetStructuredText parseText
 			format["
 			<t shadow='1' shadowColor='#000000' color='%5' size='1.6' align='center'><img size='1.6'  shadowColor='#000000' image='images\health.paa' color='%5'/> %3%1</t>
 			<t shadow='1' shadowColor='#000000' color='%4' size='1.2' align='center'><a href='http://www.tacticalgaming.net/hq'>Website: TacticalGaming.net\hq</a></t>
