@@ -65,6 +65,7 @@ addons[]=
 	"A3_Air_F_Exp_VTOL_01",
 	"A3_Air_F_EPB_Heli_Light_03",
 	"A3_Misc_F_Helpers",
+	"A3_3DEN",
 	"A3_Characters_F",
 	"A3_Characters_F_Common",
 	"A3_Drones_F_Air_F_Gamma_UAV_02",
@@ -76,7 +77,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=27;
+		items=28;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -247,19 +248,26 @@ class AddonsMetaData
 		};
 		class Item24
 		{
+			className="A3_3DEN";
+			name="Arma 3 Eden Update - Eden Editor";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item25
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item25
+		class Item26
 		{
 			className="A3_Drones_F";
 			name="Arma 3 Beta - Drones";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item26
+		class Item27
 		{
 			className="A3_Structures_F_Mark";
 			name="Arma 3 Marksmen - Buildings and Structures";
@@ -13124,7 +13132,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8527.3535,86.157509,25249.85};
-						angles[]={6.1901217,2.3548508,6.161129};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=6;
@@ -13133,7 +13141,7 @@ class Mission
 						skill=0.60000002;
 						rank="SERGEANT";
 						init="(group this) setGroupId [""IA""];";
-						description="Amazon Squad Leader";
+						description="Alpha Squad Leader";
 						isPlayer=1;
 						isPlayable=1;
 					};
@@ -13168,20 +13176,43 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8526.0645,86.49913,25251.723};
-						angles[]={6.1901217,2.354857,6.161129};
+						position[]={8526.0645,86.49929,25251.723};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Medic";
+						description="Alpha Medic";
 						isPlayable=1;
 					};
 					id=1765;
 					type="B_medic_F";
-					atlOffset=0.0088424683;
+					atlOffset=0.0090026855;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item2
 				{
@@ -13189,18 +13220,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8526.0957,86.387924,25250.668};
-						angles[]={6.1901217,2.354857,6.161129};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Repair Specialist";
+						description="Alpha Repair Specialist";
 						isPlayable=1;
 					};
 					id=1766;
 					type="B_soldier_repair_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item3
 				{
@@ -13208,58 +13262,104 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8526.6289,86.280006,25250.211};
-						angles[]={6.1901217,2.354857,6.161129};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Explosive Specialist";
+						description="Alpha Explosive Specialist";
 						isPlayable=1;
 					};
 					id=1767;
 					type="B_soldier_exp_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8527.0801,86.285858,25250.748};
-						angles[]={6.1901217,2.354857,6.161129};
+						position[]={8527.0801,86.285713,25250.748};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Autorifleman";
+						description="Alpha Autorifleman";
 						isPlayable=1;
 					};
 					id=1768;
 					type="B_soldier_AR_F";
-					atlOffset=0.011146545;
+					atlOffset=0.011001587;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8526.582,86.397202,25251.285};
-						angles[]={6.1901217,2.3548505,6.161129};
+						position[]={8526.582,86.397049,25251.285};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Grenadier";
+						description="Alpha Grenadier";
 						isPlayable=1;
 					};
 					id=1769;
 					type="B_Soldier_GL_F";
-					atlOffset=0.011154175;
+					atlOffset=0.011001587;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13290,18 +13390,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8525.5918,86.489616,25251.094};
-						angles[]={6.1901217,2.354857,6.161129};
+						angles[]={6.1901245,2.3548505,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Marksman";
+						description="Alpha Marksman";
 						isPlayable=1;
 					};
 					id=1770;
 					type="B_soldier_M_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item7
 				{
@@ -13309,18 +13432,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8525.4121,86.576576,25251.789};
-						angles[]={6.1901217,2.2304502,6.161129};
+						angles[]={6.1901245,2.2304435,6.1611342};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Amazon Rifleman (AT)";
+						description="Alpha Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=1771;
 					type="B_soldier_LAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
@@ -13340,8 +13486,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8531.0205,85.834236,25252.861};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						position[]={8531.0195,85.834373,25252.861};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=6;
@@ -13350,11 +13496,34 @@ class Mission
 						skill=0.60000002;
 						rank="SERGEANT";
 						init="(group this) setGroupId [""IB""];";
-						description="Mojave Squad Leader";
+						description="Bravo Squad Leader";
 						isPlayable=1;
 					};
 					id=1773;
 					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -13362,18 +13531,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8530.6064,85.826744,25253.857};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Medic";
+						description="Bravo Medic";
 						isPlayable=1;
 					};
 					id=1774;
 					type="B_medic_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item2
 				{
@@ -13381,18 +13573,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8529.3447,86.02356,25253.787};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Repair Specialist";
+						description="Bravo Repair Specialist";
 						isPlayable=1;
 					};
 					id=1775;
 					type="B_soldier_repair_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item3
 				{
@@ -13400,37 +13615,83 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8529.9814,85.975616,25253.096};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Explosive Specialist";
+						description="Bravo Explosive Specialist";
 						isPlayable=1;
 					};
 					id=1776;
 					type="B_soldier_exp_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8528.4482,86.056931,25255.242};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						position[]={8528.4482,86.05706,25255.24};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Autorifleman";
+						description="Bravo Autorifleman";
 						isPlayable=1;
 					};
 					id=1777;
 					type="B_soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item5
 				{
@@ -13438,18 +13699,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8529.2783,85.946632,25255.018};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Grenadier";
+						description="Bravo Grenadier";
 						isPlayable=1;
 					};
 					id=1778;
 					type="B_Soldier_GL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item6
 				{
@@ -13457,18 +13741,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8528.6533,86.087616,25254.367};
-						angles[]={0.070549726,2.2621651,6.1323404};
+						angles[]={0.070546202,2.2621737,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Marksman";
+						description="Bravo Marksman";
 						isPlayable=1;
 					};
 					id=1779;
 					type="B_soldier_M_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item7
 				{
@@ -13476,18 +13783,41 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8529.9502,85.893661,25254.322};
-						angles[]={0.070549726,2.1377578,6.1323404};
+						angles[]={0.070546202,2.1377492,6.1323361};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Mojave Rifleman (AT)";
+						description="Bravo Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=1780;
 					type="B_soldier_LAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
@@ -13507,8 +13837,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8522.9072,86.647659,25244.828};
-						angles[]={6.2325597,2.325366,6.0755558};
+						position[]={8522.9072,86.647652,25244.828};
+						angles[]={6.232553,2.3253717,6.075561};
 					};
 					side="West";
 					flags=6;
@@ -13517,157 +13847,341 @@ class Mission
 						skill=0.60000002;
 						rank="SERGEANT";
 						init="(group this) setGroupId [""IC""];";
-						description="Everest Squad Leader";
+						description="Charlie Squad Leader";
 						isPlayable=1;
 					};
 					id=1782;
 					type="B_Soldier_SL_F";
+					atlOffset=-7.6293945e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8522.0186,86.854332,25246.281};
-						angles[]={6.2778478,2.325366,6.0755558};
+						position[]={8522.0186,86.854729,25246.281};
+						angles[]={6.2778444,2.3253717,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Medic";
+						description="Charlie Medic";
 						isPlayable=1;
 					};
 					id=1783;
 					type="B_medic_F";
-					atlOffset=0.0016021729;
+					atlOffset=0.0019989014;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8522.5186,86.744377,25245.707};
-						angles[]={6.2778478,2.3253727,6.0755558};
+						position[]={8522.5186,86.744362,25245.707};
+						angles[]={6.2778444,2.3253717,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Repair Specialist";
+						description="Charlie Repair Specialist";
 						isPlayable=1;
 					};
 					id=1784;
 					type="B_soldier_repair_F";
-					atlOffset=1.5258789e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8520.9014,87.107018,25246.17};
-						angles[]={6.2778478,2.325366,6.0755558};
+						position[]={8520.9014,87.10743,25246.17};
+						angles[]={6.2778444,2.3253717,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Explosive Specialist";
+						description="Charlie Explosive Specialist";
 						isPlayable=1;
 					};
 					id=1785;
 					type="B_soldier_exp_F";
-					atlOffset=0.019584656;
+					atlOffset=0.019996643;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8522.1709,86.814522,25245.154};
-						angles[]={6.2778478,2.325366,6.0755558};
+						position[]={8522.1709,86.814507,25245.154};
+						angles[]={6.2778444,2.3253717,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Autorifleman";
+						description="Charlie Autorifleman";
 						isPlayable=1;
 					};
 					id=1786;
 					type="B_soldier_AR_F";
-					atlOffset=1.5258789e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8521.417,87.001709,25246.783};
-						angles[]={6.2778478,2.325366,6.0755558};
+						position[]={8521.417,87.002121,25246.783};
+						angles[]={6.2778444,2.3253717,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Grenadier";
+						description="Charlie Grenadier";
 						isPlayable=1;
 					};
 					id=1787;
 					type="B_Soldier_GL_F";
-					atlOffset=0.019584656;
+					atlOffset=0.019996643;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8520.5459,87.18586,25246.92};
-						angles[]={6.2778478,2.325366,6.0755558};
+						position[]={8520.5459,87.186272,25246.92};
+						angles[]={6.2778444,2.3253717,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Marksman";
+						description="Charlie Marksman";
 						isPlayable=1;
 					};
 					id=1788;
 					type="B_soldier_M_F";
-					atlOffset=0.019584656;
+					atlOffset=0.019996643;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8521.4873,86.980873,25245.662};
-						angles[]={6.2778478,2.2009592,6.0755558};
+						position[]={8521.4873,86.981285,25245.66};
+						angles[]={6.2778444,2.2009649,6.075561};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						description="Everest Rifleman (AT)";
+						description="Charlie Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=1789;
 					type="B_soldier_LAT_F";
-					atlOffset=0.019577026;
+					atlOffset=0.019996643;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=1781;
+			atlOffset=-7.6293945e-006;
 		};
 		class Item726
 		{
@@ -13762,8 +14276,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8535.0469,84.834129,25261.359};
-						angles[]={0.091741346,2.185257,6.1102638};
+						position[]={8535.0469,84.833511,25261.361};
+						angles[]={0.091734506,2.185257,6.1102581};
 					};
 					side="West";
 					flags=4;
@@ -13775,7 +14289,30 @@ class Mission
 					};
 					id=1795;
 					type="B_soldier_AR_F";
-					atlOffset=0.011451721;
+					atlOffset=0.011001587;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item5
 				{
@@ -13894,8 +14431,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8538.6484,83.94278,25264.25};
-						angles[]={0.0492948,2.2867303,6.1519437};
+						position[]={8538.6484,83.942505,25264.25};
+						angles[]={0.049288094,2.2867305,6.1519365};
 					};
 					side="West";
 					flags=4;
@@ -13907,7 +14444,30 @@ class Mission
 					};
 					id=1802;
 					type="B_medic_F";
-					atlOffset=0.00026702881;
+					atlOffset=-7.6293945e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item2
 				{
@@ -14847,7 +15407,7 @@ class Mission
 			position[]={16124.355,-3.8713781e-021,16993.75};
 			name="base_bravo_respawn_2";
 			type="Empty";
-			angle=45.695988;
+			angle=45.695984;
 			id=1871;
 			atlOffset=-13.375883;
 		};
@@ -14887,7 +15447,7 @@ class Mission
 			position[]={14583.786,-5.1154025e-020,16910.434};
 			name="base_charlie_respawn_4";
 			type="Empty";
-			angle=89.066978;
+			angle=89.066971;
 			id=1875;
 			atlOffset=-17.757803;
 		};
@@ -14935,7 +15495,7 @@ class Mission
 			position[]={20997.678,7.2135508e+024,19267.9};
 			name="base_echo_respawn_3";
 			type="Empty";
-			angle=71.906471;
+			angle=71.906464;
 			id=1880;
 			atlOffset=7.2135508e+024;
 		};
@@ -14945,7 +15505,7 @@ class Mission
 			position[]={20950.203,-9.5411603e-023,19266.27};
 			name="base_echo_respawn_4";
 			type="Empty";
-			angle=116.16596;
+			angle=116.16595;
 			id=1881;
 			atlOffset=-14.699788;
 		};
@@ -14955,7 +15515,7 @@ class Mission
 			position[]={20940.59,-0.96684933,19261.916};
 			name="base_echo_respawn_5";
 			type="Empty";
-			angle=116.16595;
+			angle=116.16594;
 			id=1882;
 			atlOffset=-14.661798;
 		};
@@ -15005,7 +15565,7 @@ class Mission
 			position[]={11573.369,2.7753777e+036,11925.412};
 			name="base_golf_respawn_1";
 			type="Empty";
-			angle=92.012772;
+			angle=92.012764;
 			id=1889;
 			atlOffset=2.7753777e+036;
 		};
@@ -15015,7 +15575,7 @@ class Mission
 			position[]={11586.546,2.7753777e+036,11987.047};
 			name="base_golf_respawn_2";
 			type="Empty";
-			angle=119.31277;
+			angle=119.31276;
 			id=1890;
 			atlOffset=2.7753777e+036;
 		};
@@ -15094,7 +15654,7 @@ class Mission
 			position[]={17446.375,14.065841,13160.847};
 			name="base_india_respawn_1";
 			type="Empty";
-			angle=52.611988;
+			angle=52.611984;
 			id=1898;
 		};
 		class Item787
@@ -15103,7 +15663,7 @@ class Mission
 			position[]={17452.719,-0.048595428,13148.842};
 			name="base_india_respawn_2";
 			type="Empty";
-			angle=52.611984;
+			angle=52.61198;
 			id=1899;
 			atlOffset=-14.323041;
 		};
@@ -15113,7 +15673,7 @@ class Mission
 			position[]={17542.037,-9.5318846e-009,13244.757};
 			name="base_india_respawn_3";
 			type="Empty";
-			angle=225.25397;
+			angle=225.25395;
 			id=1900;
 			atlOffset=-12.963527;
 		};
@@ -15123,7 +15683,7 @@ class Mission
 			position[]={16876.428,-3.9291465,13514.158};
 			name="base_juliet_respawn_1";
 			type="Empty";
-			angle=146.11629;
+			angle=146.11627;
 			id=1902;
 			atlOffset=-2.1181259;
 		};
@@ -15133,7 +15693,7 @@ class Mission
 			position[]={16895.754,-3.7021408,13493.657};
 			name="base_juliet_respawn_2";
 			type="Empty";
-			angle=133.75481;
+			angle=133.75479;
 			id=1903;
 			atlOffset=-2.1106224;
 		};
@@ -15143,7 +15703,7 @@ class Mission
 			position[]={16846.139,-4.1848669,13498.328};
 			name="base_juliet_respawn_3";
 			type="Empty";
-			angle=143.42068;
+			angle=143.42067;
 			id=1904;
 			atlOffset=-2.0238073;
 		};
@@ -15153,7 +15713,7 @@ class Mission
 			position[]={16866.383,-4.7410998,13471.19};
 			name="base_juliet_respawn_4";
 			type="Empty";
-			angle=136.30016;
+			angle=136.30014;
 			id=1905;
 			atlOffset=-1.9981554;
 		};
@@ -15203,7 +15763,7 @@ class Mission
 			position[]={7135.8599,-0.026787281,11044.14};
 			name="base_lima_respawn_1";
 			type="Empty";
-			angle=17.353395;
+			angle=17.353394;
 			id=1910;
 			atlOffset=-5.0871778;
 		};
@@ -15213,7 +15773,7 @@ class Mission
 			position[]={7141.7334,-0.18163586,11042.892};
 			name="base_lima_respawn_2";
 			type="Empty";
-			angle=17.353394;
+			angle=17.353392;
 			id=1911;
 			atlOffset=-5.0985208;
 		};
@@ -15223,7 +15783,7 @@ class Mission
 			position[]={7147.8584,-0.37296677,11041.666};
 			name="base_lima_respawn_3";
 			type="Empty";
-			angle=17.353394;
+			angle=17.353392;
 			id=1912;
 			atlOffset=-5.1011748;
 		};
