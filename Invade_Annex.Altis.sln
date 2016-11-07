@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "co40_AW_Invade_Annex_IA3_1.5.Altis", "co40_AW_Invade_Annex_IA3_1.5.Altis.shproj", "{CFA500E4-8247-4809-8F03-F70B2C64DD0E}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invade_Annex.Altis", "Invade_Annex.Altis.shproj", "{CFA500E4-8247-4809-8F03-F70B2C64DD0E}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
