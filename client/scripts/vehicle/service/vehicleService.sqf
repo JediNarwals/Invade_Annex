@@ -7,7 +7,7 @@
 if (isServer) exitWith {};
 if (isDedicated) exitWith {};
 
-private["_veh","_uav","_upp","_ui","_progress","_pgText","_cP","_displayName","_task"];
+private["_veh","_uav","_engOff","_upp","_ui","_progress","_pgText","_cP","_displayName","_task"];
 
 #define PASSED_MSG "Service complete."
 #define FAILED_MSG "Service has been interrupted and failed."
@@ -21,7 +21,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air") OR (
 	if!("ToolKit" in (items player)) then
 	{
 		life_action_inUse = true;
-		vehicle player engineOn false;
+		_engOff = vehicle player engineOn false;
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_upp = format["Servicing %1",_displayName];
 		//Setup our progress bar.
