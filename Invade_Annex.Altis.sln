@@ -7,7 +7,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invade_Annex.Altis", "Invad
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		co40_AW_Invade_Annex_IA3_1.5.Altis.projitems*{cfa500e4-8247-4809-8f03-f70b2c64dd0e}*SharedItemsImports = 13
+		Invade_Annex.Altis.projitems*{cfa500e4-8247-4809-8f03-f70b2c64dd0e}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
