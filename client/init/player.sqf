@@ -13,6 +13,7 @@ if (isNull player) then
 
 [player] spawn jedi_fnc_intro;
 
+/*
 [] spawn
 {
 	while {true} do
@@ -27,6 +28,8 @@ if (isNull player) then
 		sleep 1.3;
 	};
 };
+*/
+
 /*
 	This is a little bit of code that checks you Squad association with the Arma3.com squads page
 	This will add a notification whenever someone joins the server and is part of TacticalGaming.com/HQ on the Squads page. 

@@ -25,8 +25,23 @@ call compile preprocessFile "scripts\far_revive\FAR_revive_init.sqf";			// FarRe
 	YE-ARGH! THANK YE!
 \***********************************************************/
 
+onEachFrame  
+{  
+	if (target_Tag) then
+	{
+		drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.1, "PuristaMedium"];  
+	};
+  
+  {  
+    if ((side _x == west) && (_x != player) && ((player distance _x) < 15)) then  
+    {  
+      drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];  
+    };  
+  } foreach playableUnits;  
+};
 
-JEDI_ID_PlayerTags = ["JEDI_PlayerTags","onEachFrame","jedi_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
+//JEDI_ID_PlayerTags = ["Life_HUD_nameTags","onEachFrame","jedi_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
+//[] spawn jedi_fnc_playerTags;			// Spawns playerTags
 
 //------------------- System chat for when the Inventory is active
 
@@ -80,8 +95,8 @@ JEDI_ID_PlayerTags = ["JEDI_PlayerTags","onEachFrame","jedi_fnc_playerTags"] cal
 		_units = _units - [vehicle player];
 		{ if (_x isKindOf "Animal") then { _rem pushBack _x} } forEach _units;
 		_units = _units - _rem;
-		jedi_tag_cache = jedi_tag_units;
-		jedi_tag_units = _units;
+		life_tag_cache = life_tag_units;
+		life_tag_units = _units;
 		sleep 1.3;
 	};
 };

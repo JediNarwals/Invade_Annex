@@ -589,7 +589,7 @@ class CfgFunctions
 		{
 			file = "functions\players";
 			class globalHint { description = "Sets a message to a MP setting."; };
-			class intro { description = "Side panel that comes up on player start."};
+			class intro { description = "Side panel that comes up on player start."; };
 		};
 	};
 };

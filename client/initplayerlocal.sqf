@@ -60,6 +60,8 @@ player enableFatigue false;												// Disables fatigue
 
 //=========================== Handlers
 
+target_Tag = false;
+
 waitUntil {!isNull(findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call jedi_fnc_keyUpHandler"];
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call jedi_fnc_keyDownHandler"];
