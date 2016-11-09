@@ -46,7 +46,7 @@ _OPEN_ADMIN_MENU_KEY = 0x3B;
 
 /* What ESCAPE Menu shows */
 _ESCMNUTOP = 'www.TacticalGaming.net/HQ';
-_ESCMNUBOT = 'ts2.gameservers.com:9150';
+_ESCMNUBOT = 'TS: 162.251.164.114:10004';
 _BRIEFING_MSG = false;	/* use mission briefing message: if   "_BRIEFING_MSG = false;"   then the message will be replaced by infiSTAR */
 
 /* shows RESTART IN X MINS */
@@ -77,7 +77,7 @@ _use_html_load_on_adminmenu = false;		/* default and recommended is TRUE. infiST
 
 /*
 	PID Admin list:
-		76561198012590280 ~ JediNarwals
+		76561198012590280 ~ JediNarwals		DEV
 		76561198073657954 ~ Duke_of_Games
 		76561198142808459 ~ TG Louie G
 		76561198014933275 ~ TGxSole
@@ -89,11 +89,12 @@ _use_html_load_on_adminmenu = false;		/* default and recommended is TRUE. infiST
 		76561198031283177 ~ Muffin
 		76561198045961511 ~ rustymonk
 		76561198103704058 ~ Everest78
+		76561198195361963 ~ Bornasm			DEV
 */
 _adminUIDandAccess =
 [
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
 			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
 			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
@@ -117,7 +118,7 @@ _adminUIDandAccess =
 		]
 	],
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
 			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
 			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
@@ -141,14 +142,27 @@ _adminUIDandAccess =
 		]
 	],
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198022394569','76561198037805024','76561198014933275','76561197960385979','76561197960385979','76561198045961511','76561198103704058','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198022394569','76561198037805024','76561198014933275','76561197960385979','76561197960385979','76561198045961511','76561198103704058','76561198195361963','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
-			'spectating','AdminConsole','Delete Vehicle','ShowGear',
-			'AdminStart','AdminLog',
-			'Restore','Move In My Vehicle','Move In Target Vehicle',
-			'Kick (Silent)',
-			'Show FPS','BIS FreeRoam Cam (works with ESP)',
-			'Request Steam Name',
+			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
+			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
+			'HealSelf','HealRepairNear','AddAmmoSelf','AdminStart','AdminLog','Freeze Target','UnFreeze Target',
+			'==== Loadouts ====','==== WeatherLord ====','==== Base Deleter ====','==== VirtualItems ====',
+			'==== Weapons ====','==== Magazines ====','==== Bags ====','==== Vehicles ====','==== Objects ====','==== AltisLife Money ====',
+			'Remove Gear','Revive','Heal','Restore','Move In My Vehicle','Move In Target Vehicle','Parachute Target',
+			'Spawn UAV','Spawn Cloak','Spawn Sapper','Spawn SapperB','Eject','Eject Crew','Kill','Explode','MineField (around target)','Zeus','Force Disconnect',
+			'Kick (Silent)','Kick (Announce)','Ban (Silent)','Ban (Announce)',
+			'Default Epoch Player ESP','Default Epoch Vehicle ESP','infiSTAR Player ESP 1',
+			'infiSTAR Player ESP 2','infiSTAR Dead ESP','infiSTAR AI ESP',
+			'infiSTAR LockBox ESP','infiSTAR Shelf ESP','infiSTAR PlotPole ESP','Fake Epoch group to nearest PlotPole',
+			'infiSTAR MapIcons','PlotPole Marker','Vehicle Marker','Construction Marker','LockBox Marker','DeadPlayer Marker',
+			'God Mode','Vehicle God Mode','Lower Terrain','Vehboost','UnlimAmmo','noRecoil','FastFire','Stealth / Invisible',
+			'Disable Announces','Show FPS','Give All Licenses','Call EMP','Mass Message','DayTime','NightTime','Add / Remove Crypto',
+			'Spawn Epoch-Box','Spawn Support-Box1','Spawn Support-Box2','Spawn Support-Box3',
+			'Spawn Ammo','showinfo','Login as Arma Admin','BIS FreeRoam Cam (works with ESP)','FreeRoam Cam (does not work with ESP)',
+			'Request Steam Name','Dump unique client variables',
+			'Restrain','Unrestrain',
+			'Arsenal'	// Adds Arsenal to the mousewheel actions if you press "," on the Numpad!
 		]
 	]
 ];
@@ -156,48 +170,48 @@ _adminUIDandAccess =
 /*            many checks should be set to true instead of false.                    */
 /*     These are just diabled because the average user doesn't read this file..      */
 /* ********************************************************************************* */
-/*  Items Added Check    */ _IAC = false;	/* true or false */	/* checks if Items are being added unrightful! */
-/*  Local Vehicle Check  */ _LVC = false;	/* true or false */
-/*  unitRecoil checks    */ _URC = false;	/* true or false */	/* checks unitRecoilCoefficient and resets default unitRecoilCoefficient */
-/*  Notification check   */ _UNC = false;	/* true or false */	/* _UNC = false; on AltisLife! - showNotification check */
-/*  Use MPInterrupt check*/ _UMP = false;	/* true or false */
-/*  Check BTTNs on D49   */ _B49 = false;	/* true or false */	/* will announce: BadButton on 49 */
+/*  Items Added Check    */ _IAC = true;	/* true or false */	/* checks if Items are being added unrightful! */
+/*  Local Vehicle Check  */ _LVC = true;	/* true or false */
+/*  unitRecoil checks    */ _URC = true;	/* true or false */	/* checks unitRecoilCoefficient and resets default unitRecoilCoefficient */
+/*  Notification check   */ _UNC = true;	/* true or false */	/* _UNC = false; on AltisLife! - showNotification check */
+/*  Use MPInterrupt check*/ _UMP = true;	/* true or false */
+/*  Check BTTNs on D49   */ _B49 = true;	/* true or false */	/* will announce: BadButton on 49 */
 /*  whitelist for _B49   */ _excludedButtons = [];	/* Will Kick for BadButton XYZ if a customnized button is not white-listed here. Example: _excludedButtons = [1010]; */
-/*  Change MpFramework   */ _MPF = false;	/* true or false */	/* important to protect AltisLife */
-/*  Check Actions Plr    */ _CAP = false;	/* true or false */	/* "Actions: xxx/xxx possible scroll menu hack (or you added custom actions..)" */
-/*  Remove Actions Plr   */ _OAP = false;	/* true or false */	/* Remove ALL Actions on Player Object: (mousewheel actions) needs to be  false  for AltisLife for e.g. gathering */
-/*  Remove Actions Objs  */ _OAO = false;	/* true or false */	/* Remove ALL Actions on Objects near Player: (mousewheel actions) needs to be  false  when using e.g. IgiLoad */
-/*  Check Attached Objs  */ _CAO = false;	/* true or false */	/* needs to be  false  when using e.g. IgiLoad */
-/*  Use Anti Teleport    */ _UAT = false;	/* true or false */	/* might need to be set to false on other mods than Epoch! */
+/*  Change MpFramework   */ _MPF = true;	/* true or false */	/* important to protect AltisLife */
+/*  Check Actions Plr    */ _CAP = true;	/* true or false */	/* "Actions: xxx/xxx possible scroll menu hack (or you added custom actions..)" */
+/*  Remove Actions Plr   */ _OAP = true;	/* true or false */	/* Remove ALL Actions on Player Object: (mousewheel actions) needs to be  false  for AltisLife for e.g. gathering */
+/*  Remove Actions Objs  */ _OAO = true;	/* true or false */	/* Remove ALL Actions on Objects near Player: (mousewheel actions) needs to be  false  when using e.g. IgiLoad */
+/*  Check Attached Objs  */ _CAO = true;	/* true or false */	/* needs to be  false  when using e.g. IgiLoad */
+/*  Use Anti Teleport    */ _UAT = true;	/* true or false */	/* might need to be set to false on other mods than Epoch! */
 /*  Chat-Vote Day/Night  */ _VDN = false;	/* true or false */
 /*  Check Vision Mode    */ _CVM = false;	/* true or false */
 /*  check view distance  */ _CVD = false;	/* true or false */	/* if the viewdistance is not 1600 - ban. */
 /*  check cameraOn       */ _CCO = false;	/* true or false */	/* needs to be false for UAV drones and such things.. */
 /*  Revert onEachFrame   */ _REF = false;	/* true or false */	/* AltisLife uses this for PlayerTags - so it should be   _REF = false;   on AltisLife */
 /*  Map Icon Check       */ _MIC = false;	/* true or false */	/* Needs to be  false  on some WasteLand versions */
-/*  Remove All Mines     */ _RAM = false;	/* true or false */
+/*  Remove All Mines     */ _RAM = true;	/* true or false */
 /*  Remove All UAVs      */ _RUS = false;	/* true or false */
 /*  onEachFrame function */ _rOEF = {};		/* this needs to be CODE */
 /*  custom HandleDamage  */ _CHD = {};		/* this needs to be CODE */
 /*  Revert allowDamage   */ _RAD = false;	/* true or false */	/* if you have safezones using "player allowDamage false;" or similar.. set _RAD = false; */
-/*  Revert HandleDamage  */ _RHD = false;	/* true or false */	/* Needs to be  false  for Paintball script */
+/*  Revert HandleDamage  */ _RHD = true;	/* true or false */	/* Needs to be  false  for Paintball script */
 /*  EH_Draw3D check      */ _C3D = false;	/* true or false */	/* announces: "EH_Draw3D x should be y" */
 /*  MouseMoving EH check */ _MOH = false;	/* true or false */	/* announces: "MouseMoving EventHandler added" - needs to be disabled for UAV scripts and such.. */
-/*  MouseButton EH check */ _MBC = false;	/* true or false */	/* announces: "MouseButton EventHandler added" */
+/*  MouseButton EH check */ _MBC = true;	/* true or false */	/* announces: "MouseButton EventHandler added" */
 /*  Revert MouseButton   */ _RMB = false;	/* true or false */	/* false with Task Force Radio ? */
 /*  Revert KeyUp         */ _RUK = false;	/* true or false */	/* recommended:  true  Removes custom KeyUps and sets back the default ones (false with Task Force Radio ?) */
 /*  Revert KeyDown       */ _RDK = false;	/* true or false */	/* recommended:  true  Removes custom KeyDowns and sets back the default ones (false with Task Force Radio ?) */
 /*  Check Keybinds       */ _CKB = false;	/* true or false */	/* recommended:  true  _RKB needs to be true! Checks Keybinds, if it finds added ones it shows: "KeyBinds added   %1 should be %2" */
-/*  check MapSingleClick */ _OMC = false;	/* true or false */	/* announces: "MapSingleClick modified", if modification is found - NEEDS _MBC to be true! */
-/*  Remove Hit Handler   */ _REH = false;	/* true or false */	/* Needs to be  false  for Paintball script */
+/*  check MapSingleClick */ _OMC = true;	/* true or false */	/* announces: "MapSingleClick modified", if modification is found - NEEDS _MBC to be true! */
+/*  Remove Hit Handler   */ _REH = true;	/* true or false */	/* Needs to be  false  for Paintball script */
 /*  Revert InventoryOpen */ _RIO = false;	/* true or false */	/* AltisLife only: Sets the custom InventoryOpened Handler */
 /*  Revert Killed EH     */ _RKH = false;	/* true or false */
 /*  "" Respawn Handler   */ _RRH = false;	/* true or false */	/* Needs to be  false  for some custom loadout scripts */
-/*  Revert Map EH        */ _RMEH = ['MouseButtonDblClick','MouseButtonClick','MouseButtonDown','MouseButtonUp','MouseZChanged','MouseHolding','KeyDown','KeyUp'];
+/*  Revert Map EH        */ _RMEH = ['MouseButtonClick','MouseButtonDown','MouseButtonUp','MouseZChanged','MouseHolding','KeyDown','KeyUp'];
 /*  Do not change EH_Fired at all! */ _NO_EHF = false;	/*true or false */	/* obviously needs to be false if settings below are supposed to be used! */
 /*  Use EH_Fired check   */ _EHF = false;	/* true or false */	/* Some mods revert the EventHandlers by default and can cause problems with this check. Tested on Epoch and AltisLife. */
 /*  custom _EHF Function */ _customFiredEventhandler = '';		/* CODE OR STRING */
-/*  check for RscDisplayArsenal */ _checkRscDisplayArsenal = false;	/* true or false */
+/*  check for RscDisplayArsenal */ _checkRscDisplayArsenal = true;	/* true or false */
 
 
 /*
@@ -214,12 +228,12 @@ _customOnPlayerConnected = {};
 
 
 /* ------- SOME EPOCH ONLY FUNCTIONS - BELOW ------- */
-/*  Check Crypto         */ _CCT = false;	/* true or false */	/* When a players Crypto is smaller than 0 or bigger than 250000, the player gets banned (not possible with default epoch)
-/*  Use CombatLog checks */ _CLG = false;	/* true or false */	/* "PLAYERNAME CombatLogged GPS X/Y find the dead body!"
+/*  Check Crypto         */ _CCT = true;	/* true or false */	/* When a players Crypto is smaller than 0 or bigger than 250000, the player gets banned (not possible with default epoch)
+/*  Use CombatLog checks */ _CLG = true;	/* true or false */	/* "PLAYERNAME CombatLogged GPS X/Y find the dead body!"
 /*  Use Anti Glitch      */ _UAG = true;	/* true or false */	/* a try to stop glitching through walls on Doors/Walls */
 /*  Use Anti Wall Look   */ _AWL = true;	/* true or false */	/* *experimental* a try to stop people from watching through Epoch Doors/Walls */
-/*  MPHit Log            */ _MPH = false;	/* true or false */	/* will create a A3_MPHIT.txt file where logs hits on players */
-/*  Token Check          */ _TOC = false;	/* true or false */	/* checks if a player got a token after a certain amount of time (trigger message: PlayerConnected %1 seconds ago but did not Request a Token!) */
+/*  MPHit Log            */ _MPH = true;	/* true or false */	/* will create a A3_MPHIT.txt file where logs hits on players */
+/*  Token Check          */ _TOC = true;	/* true or false */	/* checks if a player got a token after a certain amount of time (trigger message: PlayerConnected %1 seconds ago but did not Request a Token!) */
 /* ------- SOME EPOCH ONLY FUNCTIONS - ABOVE ------- */
 
 
@@ -245,8 +259,8 @@ _RPR = false;	/* true or false */
 _EpochIndestructible = false;
 
 
-/*  CommandingMenu Check */ _CMC = false;	/* true or false */
-/*  Close ALL CMD-Menus  */ _KCM = false;	/* true or false */	/* Just closes All Commandingmenus (ignores the white-list below) */
+/*  CommandingMenu Check */ _CMC = true;	/* true or false */
+/*  Close ALL CMD-Menus  */ _KCM = true;	/* true or false */	/* Just closes All Commandingmenus (ignores the white-list below) */
 /* _cMenu: if '_CMC = true;' then this array holds the ALLOWED Commanding Menus */
 _cMenu =
 [
@@ -304,8 +318,8 @@ _allowedIDDs =
 
 
 
-/*  Use Memoryhack check */ _UMH = false;	/* true or false */
-/*  Use on(Un)Load check */ _UOL = false;	/* true or false */
+/*  Use Memoryhack check */ _UMH = true;	/* true or false */
+/*  Use on(Un)Load check */ _UOL = true;	/* true or false */
 /* _onLoadUnload1: The AntiHack will test if the client has the same entry as the server. (only if _UOL = true;) */
 _onLoadUnload1 = [
 	'RscDisplayCustomArcade','RscDisplayArcadeMap','RscDisplayArcadeModules','RscDisplayArcadeGroup',

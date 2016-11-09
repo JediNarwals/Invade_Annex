@@ -81,7 +81,8 @@ _alpha = _display displayCtrl 55555;
 		((uiNamespace getVariable "jediHud")displayCtrl 55555)ctrlSetStructuredText parseText
 			format["
 			<t shadow='1' shadowColor='#000000' color='%5' size='1.6' align='center'><img size='1.6'  shadowColor='#000000' image='images\health.paa' color='%5'/> %3%1</t>
-			<t shadow='1' shadowColor='#000000' color='%4' size='1.2' align='center'><a href='http://www.tacticalgaming.net/hq'>Website: TacticalGaming.net\hq</a></t>
+			<t shadow='1' shadowColor='#000000' color='%4' size='1.2' align='center'>Website: TacticalGaming.net\hq</t>
+			<t shadow='1' shadowColor='#000000' color='%4' size='1.2' alight='center>TeamSpeak: 162.251.164.114:10004</t>
 			<t shadow='1' shadowColor='#000000' color='%4' size='2.0' align='center'><img size='2.0'  shadowColor='#000000' image='images\players.paa' color='%4'/> %2</t>",
 
 					"%",
