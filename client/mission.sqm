@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
 		nextID=1924;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8570.0488,102.65884,25259.588};
-		dir[]={-0.74669451,-0.51182765,-0.42484465};
-		up[]={-0.4448652,0.85908473,-0.25311321};
-		aside[]={-0.4945282,-1.5777186e-007,0.86916882};
+		pos[]={9070.71,949.88751,25462.164};
+		dir[]={-0.52282643,-0.55102718,0.65041631};
+		up[]={-0.34522966,0.83448189,0.42947945};
+		aside[]={0.77941632,-2.4106703e-007,0.62652081};
 	};
 };
 binarizationWanted=0;
@@ -7655,7 +7655,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23096.289,3.1900001,18907.039};
-			angle=1.5591024;
+			angle=1.5591027;
 			class Attributes
 			{
 				condition="this and ((getPos (thisList select 0)) select 2 < 1)";
@@ -15406,7 +15406,7 @@ class Mission
 			position[]={16124.355,-3.8713781e-021,16993.75};
 			name="base_bravo_respawn_2";
 			type="Empty";
-			angle=45.695984;
+			angle=45.69598;
 			id=1871;
 			atlOffset=-13.375883;
 		};
@@ -15446,7 +15446,7 @@ class Mission
 			position[]={14583.786,-5.1154025e-020,16910.434};
 			name="base_charlie_respawn_4";
 			type="Empty";
-			angle=89.066971;
+			angle=89.066963;
 			id=1875;
 			atlOffset=-17.757803;
 		};
@@ -15494,7 +15494,7 @@ class Mission
 			position[]={20997.678,7.2135508e+024,19267.9};
 			name="base_echo_respawn_3";
 			type="Empty";
-			angle=71.906464;
+			angle=71.906456;
 			id=1880;
 			atlOffset=7.2135508e+024;
 		};
@@ -15504,7 +15504,7 @@ class Mission
 			position[]={20950.203,-9.5411603e-023,19266.27};
 			name="base_echo_respawn_4";
 			type="Empty";
-			angle=116.16595;
+			angle=116.16594;
 			id=1881;
 			atlOffset=-14.699788;
 		};
@@ -15564,7 +15564,7 @@ class Mission
 			position[]={11573.369,2.7753777e+036,11925.412};
 			name="base_golf_respawn_1";
 			type="Empty";
-			angle=92.012764;
+			angle=92.012756;
 			id=1889;
 			atlOffset=2.7753777e+036;
 		};
@@ -15653,7 +15653,7 @@ class Mission
 			position[]={17446.375,14.065841,13160.847};
 			name="base_india_respawn_1";
 			type="Empty";
-			angle=52.611984;
+			angle=52.61198;
 			id=1898;
 		};
 		class Item787
@@ -15662,7 +15662,7 @@ class Mission
 			position[]={17452.719,-0.048595428,13148.842};
 			name="base_india_respawn_2";
 			type="Empty";
-			angle=52.61198;
+			angle=52.611977;
 			id=1899;
 			atlOffset=-14.323041;
 		};
@@ -15672,7 +15672,7 @@ class Mission
 			position[]={17542.037,-9.5318846e-009,13244.757};
 			name="base_india_respawn_3";
 			type="Empty";
-			angle=225.25395;
+			angle=225.25394;
 			id=1900;
 			atlOffset=-12.963527;
 		};
@@ -15682,7 +15682,7 @@ class Mission
 			position[]={16876.428,-3.9291465,13514.158};
 			name="base_juliet_respawn_1";
 			type="Empty";
-			angle=146.11627;
+			angle=146.11626;
 			id=1902;
 			atlOffset=-2.1181259;
 		};
@@ -15692,7 +15692,7 @@ class Mission
 			position[]={16895.754,-3.7021408,13493.657};
 			name="base_juliet_respawn_2";
 			type="Empty";
-			angle=133.75479;
+			angle=133.75478;
 			id=1903;
 			atlOffset=-2.1106224;
 		};
@@ -15702,7 +15702,7 @@ class Mission
 			position[]={16846.139,-4.1848669,13498.328};
 			name="base_juliet_respawn_3";
 			type="Empty";
-			angle=143.42067;
+			angle=143.42065;
 			id=1904;
 			atlOffset=-2.0238073;
 		};
@@ -15762,7 +15762,7 @@ class Mission
 			position[]={7135.8599,-0.026787281,11044.14};
 			name="base_lima_respawn_1";
 			type="Empty";
-			angle=17.353394;
+			angle=17.353392;
 			id=1910;
 			atlOffset=-5.0871778;
 		};
@@ -15772,7 +15772,7 @@ class Mission
 			position[]={7141.7334,-0.18163586,11042.892};
 			name="base_lima_respawn_2";
 			type="Empty";
-			angle=17.353392;
+			angle=17.35339;
 			id=1911;
 			atlOffset=-5.0985208;
 		};
@@ -15782,7 +15782,7 @@ class Mission
 			position[]={7147.8584,-0.37296677,11041.666};
 			name="base_lima_respawn_3";
 			type="Empty";
-			angle=17.353392;
+			angle=17.35339;
 			id=1912;
 			atlOffset=-5.1011748;
 		};
