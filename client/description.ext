@@ -54,7 +54,6 @@ class CfgRespawnTemplates
 class RscTitles
 {
 	#include "dialog\statusBar.hpp"						// Status bar HUD
-	#include "dialog\hud_nameTags.h"					// Name Tags
 	#include "dialog\progress.hpp"						// Progress bar
 };
 

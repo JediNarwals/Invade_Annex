@@ -39,11 +39,6 @@ if (_code in (actionKeys "PushToTalk") || _code in (actionKeys "PushToTalkSide")
 {
 	if (currentChannel in [0,1]) then { systemChat format["Voice over this channel is not allowed. Join our TeamSpeak.", _chan]; _handled = true; };
 };
-if (_code in (actionKeys "User8") then
-{
-	if (!target_Tag) then { target_Tag = true };
-	_handled = true;
-};
 if (_code in ((actionKeys "NetworkPlayers") + (actionKeys "forceCommandingMode") + (actionKeys "menuBack"))) then
 {
 	_handled = true;
