@@ -90,11 +90,12 @@ _use_html_load_on_adminmenu = false;		/* default and recommended is TRUE. infiST
 		76561198045961511 ~ rustymonk
 		76561198103704058 ~ Everest78
 		76561198195361963 ~ Bornasm			DEV
+		76561198137610055 ~ Sierra Mike
 */
 _adminUIDandAccess =
 [
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','76561198137610055','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
 			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
 			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
@@ -118,7 +119,7 @@ _adminUIDandAccess =
 		]
 	],
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','76561198137610055','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
 			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
 			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
@@ -142,7 +143,7 @@ _adminUIDandAccess =
 		]
 	],
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198022394569','76561198037805024','76561198014933275','76561197960385979','76561197960385979','76561198045961511','76561198103704058','76561198195361963','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198022394569','76561198037805024','76561198014933275','76561197960385979','76561197960385979','76561198045961511','76561198103704058','76561198195361963','76561198137610055','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
 			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
 			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
@@ -172,24 +173,24 @@ _adminUIDandAccess =
 /* ********************************************************************************* */
 /*  Items Added Check    */ _IAC = true;	/* true or false */	/* checks if Items are being added unrightful! */
 /*  Local Vehicle Check  */ _LVC = true;	/* true or false */
-/*  unitRecoil checks    */ _URC = true;	/* true or false */	/* checks unitRecoilCoefficient and resets default unitRecoilCoefficient */
+/*  unitRecoil checks    */ _URC = false;	/* true or false */	/* checks unitRecoilCoefficient and resets default unitRecoilCoefficient */
 /*  Notification check   */ _UNC = true;	/* true or false */	/* _UNC = false; on AltisLife! - showNotification check */
 /*  Use MPInterrupt check*/ _UMP = true;	/* true or false */
 /*  Check BTTNs on D49   */ _B49 = true;	/* true or false */	/* will announce: BadButton on 49 */
 /*  whitelist for _B49   */ _excludedButtons = [];	/* Will Kick for BadButton XYZ if a customnized button is not white-listed here. Example: _excludedButtons = [1010]; */
 /*  Change MpFramework   */ _MPF = true;	/* true or false */	/* important to protect AltisLife */
-/*  Check Actions Plr    */ _CAP = true;	/* true or false */	/* "Actions: xxx/xxx possible scroll menu hack (or you added custom actions..)" */
-/*  Remove Actions Plr   */ _OAP = true;	/* true or false */	/* Remove ALL Actions on Player Object: (mousewheel actions) needs to be  false  for AltisLife for e.g. gathering */
-/*  Remove Actions Objs  */ _OAO = true;	/* true or false */	/* Remove ALL Actions on Objects near Player: (mousewheel actions) needs to be  false  when using e.g. IgiLoad */
-/*  Check Attached Objs  */ _CAO = true;	/* true or false */	/* needs to be  false  when using e.g. IgiLoad */
-/*  Use Anti Teleport    */ _UAT = true;	/* true or false */	/* might need to be set to false on other mods than Epoch! */
+/*  Check Actions Plr    */ _CAP = false;	/* true or false */	/* "Actions: xxx/xxx possible scroll menu hack (or you added custom actions..)" */
+/*  Remove Actions Plr   */ _OAP = false;	/* true or false */	/* Remove ALL Actions on Player Object: (mousewheel actions) needs to be  false  for AltisLife for e.g. gathering */
+/*  Remove Actions Objs  */ _OAO = false;	/* true or false */	/* Remove ALL Actions on Objects near Player: (mousewheel actions) needs to be  false  when using e.g. IgiLoad */
+/*  Check Attached Objs  */ _CAO = false;	/* true or false */	/* needs to be  false  when using e.g. IgiLoad */
+/*  Use Anti Teleport    */ _UAT = false;	/* true or false */	/* might need to be set to false on other mods than Epoch! */
 /*  Chat-Vote Day/Night  */ _VDN = false;	/* true or false */
 /*  Check Vision Mode    */ _CVM = false;	/* true or false */
 /*  check view distance  */ _CVD = false;	/* true or false */	/* if the viewdistance is not 1600 - ban. */
 /*  check cameraOn       */ _CCO = false;	/* true or false */	/* needs to be false for UAV drones and such things.. */
 /*  Revert onEachFrame   */ _REF = false;	/* true or false */	/* AltisLife uses this for PlayerTags - so it should be   _REF = false;   on AltisLife */
 /*  Map Icon Check       */ _MIC = false;	/* true or false */	/* Needs to be  false  on some WasteLand versions */
-/*  Remove All Mines     */ _RAM = true;	/* true or false */
+/*  Remove All Mines     */ _RAM = false;	/* true or false */
 /*  Remove All UAVs      */ _RUS = false;	/* true or false */
 /*  onEachFrame function */ _rOEF = {};		/* this needs to be CODE */
 /*  custom HandleDamage  */ _CHD = {};		/* this needs to be CODE */
@@ -197,7 +198,7 @@ _adminUIDandAccess =
 /*  Revert HandleDamage  */ _RHD = true;	/* true or false */	/* Needs to be  false  for Paintball script */
 /*  EH_Draw3D check      */ _C3D = false;	/* true or false */	/* announces: "EH_Draw3D x should be y" */
 /*  MouseMoving EH check */ _MOH = false;	/* true or false */	/* announces: "MouseMoving EventHandler added" - needs to be disabled for UAV scripts and such.. */
-/*  MouseButton EH check */ _MBC = true;	/* true or false */	/* announces: "MouseButton EventHandler added" */
+/*  MouseButton EH check */ _MBC = false;	/* true or false */	/* announces: "MouseButton EventHandler added" */
 /*  Revert MouseButton   */ _RMB = false;	/* true or false */	/* false with Task Force Radio ? */
 /*  Revert KeyUp         */ _RUK = false;	/* true or false */	/* recommended:  true  Removes custom KeyUps and sets back the default ones (false with Task Force Radio ?) */
 /*  Revert KeyDown       */ _RDK = false;	/* true or false */	/* recommended:  true  Removes custom KeyDowns and sets back the default ones (false with Task Force Radio ?) */
@@ -207,7 +208,7 @@ _adminUIDandAccess =
 /*  Revert InventoryOpen */ _RIO = false;	/* true or false */	/* AltisLife only: Sets the custom InventoryOpened Handler */
 /*  Revert Killed EH     */ _RKH = false;	/* true or false */
 /*  "" Respawn Handler   */ _RRH = false;	/* true or false */	/* Needs to be  false  for some custom loadout scripts */
-/*  Revert Map EH        */ _RMEH = ['MouseButtonClick','MouseButtonDown','MouseButtonUp','MouseZChanged','MouseHolding','KeyDown','KeyUp'];
+/*  Revert Map EH        */ _RMEH = [];
 /*  Do not change EH_Fired at all! */ _NO_EHF = false;	/*true or false */	/* obviously needs to be false if settings below are supposed to be used! */
 /*  Use EH_Fired check   */ _EHF = false;	/* true or false */	/* Some mods revert the EventHandlers by default and can cause problems with this check. Tested on Epoch and AltisLife. */
 /*  custom _EHF Function */ _customFiredEventhandler = '';		/* CODE OR STRING */

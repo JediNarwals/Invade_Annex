@@ -1213,8 +1213,8 @@ class Mission
 			{
 				position[]={971.88397,-185.97,869.974};
 			};
-			name="Admin2";
-			init="[this, [-1, -2, 0]] call bis_fnc_setcuratorvisionmodes; Admin2 setVariable [""showNotification"", false]";
+			name="SierraMike";
+			init="[this, [-1, -2, 0]] call bis_fnc_setcuratorvisionmodes; SierraMike setVariable [""showNotification"", false]";
 			id=71;
 			type="ModuleCurator_F";
 			class CustomAttributes
@@ -1234,7 +1234,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="#adminLogged";
+							value="76561198137610055";
 						};
 					};
 				};
@@ -1272,7 +1272,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Admin2";
+							value="SierraMike";
 						};
 					};
 				};

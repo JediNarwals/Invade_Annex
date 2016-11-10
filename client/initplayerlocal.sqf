@@ -26,7 +26,6 @@ player enableFatigue false;												// Disables fatigue
 
 {_x addCuratorEditableObjects [[player],FALSE];} count allCurators;				// Adds players to Zeus
 
-[] spawn jedi_fnc_playerTags;													// Spawns NameTags
 [] call jedi_fnc_setupActions;													// Sets up the scroll actions
 [] execVM "scripts\recoilFix.sqf";												// Fixes the recoil to be a bit more Realistic
 [] execVM "scripts\icons.sqf";													// blufor map tracker ~Quicksilver
@@ -60,7 +59,6 @@ player enableFatigue false;												// Disables fatigue
 
 //=========================== Handlers
 
-target_Tag = false;
 
 waitUntil {!isNull(findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call jedi_fnc_keyUpHandler"];
