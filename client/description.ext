@@ -558,7 +558,6 @@ class CfgFunctions
 			class progressBar { description = "Adds the progress bar to the display.";};
 			class hudSetup { description = "Sets up the HUD for the player."; };
 			class hudUpdate { description = "Updates the HUD for the player on actions taken against the player."; };
-			class playerTags { description = "The main display for the player tags."; };
 		};
 		class cleanup
 		{

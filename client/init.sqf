@@ -25,24 +25,22 @@ call compile preprocessFile "scripts\far_revive\FAR_revive_init.sqf";			// FarRe
 	YE-ARGH! THANK YE!
 \***********************************************************/
 
-onEachFrame  
-{  
-  {
-	if (cursorTarget) then
-	{
-		drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];  
-	};
-  } foreach playableUnits;
-  {  
-    if ((side _x == west) && (_x != player) && ((player distance _x) < 15)) then  
-    {  
-      drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];  
-    };  
-  } foreach playableUnits;  
+onEachFrame   
+{   
+  { 
+ if (cursorObject == _x) then 
+ { 
+  drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];   
+ }; 
+  } foreach playableUnits; 
+  {   
+    if ((side _x == west) && (_x != player) && ((player distance _x) < 15)) then   
+    {   
+      drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];   
+    };   
+  } foreach playableUnits;   
 };
 
-//JEDI_ID_PlayerTags = ["Life_HUD_nameTags","onEachFrame","jedi_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
-//[] spawn jedi_fnc_playerTags;			// Spawns playerTags
 
 //------------------- System chat for when the Inventory is active
 
@@ -83,22 +81,3 @@ onEachFrame
 		};
 	};
 };
-
-/*
-//------------------- Adds nametags to people (Hopefully)
-
-[] spawn
-{
-	while {true} do
-	{
-		_rem = [];
-		_units = getPosATL player nearEntities [["Man","Car","Air","Ship"],20];
-		_units = _units - [vehicle player];
-		{ if (_x isKindOf "Animal") then { _rem pushBack _x} } forEach _units;
-		_units = _units - _rem;
-		life_tag_cache = life_tag_units;
-		life_tag_units = _units;
-		sleep 1.3;
-	};
-};
-*/

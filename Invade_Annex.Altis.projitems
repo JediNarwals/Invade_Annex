@@ -59,9 +59,7 @@
     <None Include="$(MSBuildThisFileDirectory)client\dialog\common.hpp" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\function\fn_hudSetup.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\function\fn_hudUpdate.sqf" />
-    <None Include="$(MSBuildThisFileDirectory)client\dialog\function\fn_playerTags.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\function\fn_progressBar.sqf" />
-    <None Include="$(MSBuildThisFileDirectory)client\dialog\hud_nameTags.h" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\progress.hpp" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\statusBar.hpp" />
     <None Include="$(MSBuildThisFileDirectory)client\external\vehicle.sqf" />
