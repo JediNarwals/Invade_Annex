@@ -17,7 +17,7 @@
 
 	This is   VERY IMPORTANT   as it is needed to KICK & BAN people.
 */
-_serverCommandPassword = 'Muffinisgod';
+_serverCommandPassword = 'armaisthebest';
 
 /*
 	"_passwordAdmin" is passwordAdmin - in your servers config.cfg, needed for servercommands from client
@@ -229,12 +229,12 @@ _customOnPlayerConnected = {};
 
 
 /* ------- SOME EPOCH ONLY FUNCTIONS - BELOW ------- */
-/*  Check Crypto         */ _CCT = true;	/* true or false */	/* When a players Crypto is smaller than 0 or bigger than 250000, the player gets banned (not possible with default epoch)
-/*  Use CombatLog checks */ _CLG = true;	/* true or false */	/* "PLAYERNAME CombatLogged GPS X/Y find the dead body!"
-/*  Use Anti Glitch      */ _UAG = true;	/* true or false */	/* a try to stop glitching through walls on Doors/Walls */
-/*  Use Anti Wall Look   */ _AWL = true;	/* true or false */	/* *experimental* a try to stop people from watching through Epoch Doors/Walls */
-/*  MPHit Log            */ _MPH = true;	/* true or false */	/* will create a A3_MPHIT.txt file where logs hits on players */
-/*  Token Check          */ _TOC = true;	/* true or false */	/* checks if a player got a token after a certain amount of time (trigger message: PlayerConnected %1 seconds ago but did not Request a Token!) */
+/*  Check Crypto         */ _CCT = false;	/* true or false */	/* When a players Crypto is smaller than 0 or bigger than 250000, the player gets banned (not possible with default epoch)
+/*  Use CombatLog checks */ _CLG = false;	/* true or false */	/* "PLAYERNAME CombatLogged GPS X/Y find the dead body!"
+/*  Use Anti Glitch      */ _UAG = false;	/* true or false */	/* a try to stop glitching through walls on Doors/Walls */
+/*  Use Anti Wall Look   */ _AWL = false;	/* true or false */	/* *experimental* a try to stop people from watching through Epoch Doors/Walls */
+/*  MPHit Log            */ _MPH = false;	/* true or false */	/* will create a A3_MPHIT.txt file where logs hits on players */
+/*  Token Check          */ _TOC = false;	/* true or false */	/* checks if a player got a token after a certain amount of time (trigger message: PlayerConnected %1 seconds ago but did not Request a Token!) */
 /* ------- SOME EPOCH ONLY FUNCTIONS - ABOVE ------- */
 
 
