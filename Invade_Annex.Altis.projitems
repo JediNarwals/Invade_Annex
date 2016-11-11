@@ -215,6 +215,7 @@
     <None Include="$(MSBuildThisFileDirectory)client\scripts\outlw_magRepack\Scripts\MagRepack_Keybindings.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\scripts\outlw_magRepack\Scripts\MagRepack_Main.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\scripts\outlw_magRepack\Scripts\MagRepack_Misc.sqf" />
+    <None Include="$(MSBuildThisFileDirectory)client\scripts\pilotcheck.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\scripts\recoilFix.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\scripts\SafeZone\SZhit.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\scripts\SafeZone\SZkilled.sqf" />

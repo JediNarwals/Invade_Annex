@@ -30,6 +30,7 @@ player enableFatigue false;												// Disables fatigue
 [] execVM "scripts\recoilFix.sqf";												// Fixes the recoil to be a bit more Realistic
 [] execVM "scripts\icons.sqf";													// blufor map tracker ~Quicksilver
 [] execVM "scripts\diary.sqf";													// diary tabs
+[] execVM "scripts\pilotCheck.sqf";												// Pilots only in Heli's
 
 /*
 	@class 			Channel enabler
@@ -63,9 +64,3 @@ player enableFatigue false;												// Disables fatigue
 waitUntil {!isNull(findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call jedi_fnc_keyUpHandler"];
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call jedi_fnc_keyDownHandler"];
-
-_unit = player;
-
-_unit addEventHandler ["killed", {_this execVM "scripts\SafeZone\SZkilled.sqf"}];
-_unit addEventHandler ["hit", {_this execVM "scripts\SafeZone\SZhit.sqf"}];	
-systemChat "Anti-Team Killing initialized...";

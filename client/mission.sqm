@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6;
+		nextID=7;
 	};
 	class Camera
 	{
@@ -2422,14 +2422,13 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23096.289,3.1900001,18907.039};
-			angle=1.5591025;
+			angle=1.5591024;
 			class Attributes
 			{
 				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -2535,7 +2534,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -2641,7 +2639,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -2766,7 +2763,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7584,7 +7580,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7604,7 +7599,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7624,7 +7618,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7644,7 +7637,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7665,7 +7657,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7686,7 +7677,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7707,7 +7697,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7727,7 +7716,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7747,7 +7735,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7767,7 +7754,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7860,7 +7846,7 @@ class Mission
 			position[]={20967.184,9.5572205e+029,19273.76};
 			name="base_echo_respawn_1";
 			type="Empty";
-			angle=109.58988;
+			angle=109.58987;
 			id=1878;
 			atlOffset=9.5572205e+029;
 		};
@@ -21479,7 +21465,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21499,7 +21484,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21519,7 +21503,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21539,7 +21522,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21559,7 +21541,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21579,7 +21560,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21599,7 +21579,6 @@ class Mission
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21646,17 +21625,17 @@ class Mission
 		class Item1037
 		{
 			dataType="Trigger";
-			position[]={23288.703,3.1900001,18812.113};
+			position[]={23255.07,3.1900001,18813.316};
 			class Attributes
 			{
 				name="Safe_zone";
-				condition="player in thisList;";
-				onActivation="systemChat ""Entering the SafeZone"";" \n "player allowDamage false;";
-				onDeactivation="systemChat ""Leaving the SafeZone. Good Luck."";" \n "player allowDamage true;";
-				sizeA=100;
+				condition="player in thisList || vehicle player in thisList";
+				onActivation="player allowDamage false;" \n "systemChat ""Entering the SafeZone"";";
+				onDeactivation="player allowDamage true;" \n "systemChat ""Leaving the SafeZone. Good Luck."";";
+				sizeA=200;
 				sizeB=150;
 				repeatable=1;
-				activationBy="WEST";
+				activationBy="ANY";
 				isRectangle=1;
 			};
 			id=2941;
