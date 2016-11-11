@@ -53,7 +53,7 @@ class CfgRespawnTemplates
 
 class RscTitles
 {
-	#include "dialog\statusBar.hpp"						// Status bar HUD
+	#include "dialog\HUDcontrol.hpp"						// Player HUD
 	#include "dialog\progress.hpp"						// Progress bar
 };
 

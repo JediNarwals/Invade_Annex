@@ -27,18 +27,18 @@ call compile preprocessFile "scripts\far_revive\FAR_revive_init.sqf";			// FarRe
 
 onEachFrame   
 {   
-  { 
- if (cursorObject == _x) then 
- { 
-  drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];   
- }; 
-  } foreach playableUnits; 
-  {   
-    if ((side _x == west) && (_x != player) && ((player distance _x) < 15)) then   
-    {   
-      drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];   
-    };   
-  } foreach playableUnits;   
+	{ 
+		if (cursorObject == _x) then 
+		{ 
+			drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];   
+		}; 
+		} foreach playableUnits; 
+		{   
+			if ((side _x == west) && (_x != player) && ((player distance _x) < 15)) then   
+		{   
+			drawIcon3D ["", [1, 1, 1, 1], [visiblePosition _x select 0, visiblePosition _x select 1,(visiblePosition _x select 2)+2.2], 0.15, 0.15, 45, (format [name _x]), 2, 0.035, "PuristaMedium"];   
+		};   
+	} foreach playableUnits;   
 };
 
 

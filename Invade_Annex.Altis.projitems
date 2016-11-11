@@ -61,7 +61,7 @@
     <None Include="$(MSBuildThisFileDirectory)client\dialog\function\fn_hudUpdate.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\function\fn_progressBar.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\dialog\progress.hpp" />
-    <None Include="$(MSBuildThisFileDirectory)client\dialog\statusBar.hpp" />
+    <None Include="$(MSBuildThisFileDirectory)client\dialog\HUDcontrol.hpp" />
     <None Include="$(MSBuildThisFileDirectory)client\external\vehicle.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\functions\actions\fn_activateNitro.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\functions\actions\fn_animSync.sqf" />
