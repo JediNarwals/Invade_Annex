@@ -2425,11 +2425,11 @@ class Mission
 			angle=1.5591025;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -2531,11 +2531,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -2637,11 +2637,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -2762,11 +2762,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7580,11 +7580,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7600,11 +7600,11 @@ class Mission
 			angle=0.72596914;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7620,11 +7620,11 @@ class Mission
 			angle=5.3363161;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7640,11 +7640,11 @@ class Mission
 			angle=5.3421068;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7661,11 +7661,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7682,11 +7682,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7703,11 +7703,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7723,11 +7723,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7743,11 +7743,11 @@ class Mission
 			angle=1.5591024;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -7763,11 +7763,11 @@ class Mission
 			angle=5.7757292;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21475,11 +21475,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21495,11 +21495,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21515,11 +21515,11 @@ class Mission
 			angle=4.6757722;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21535,11 +21535,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21555,11 +21555,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21575,11 +21575,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
@@ -21595,11 +21595,11 @@ class Mission
 			angle=4.6757684;
 			class Attributes
 			{
-				condition="vehicle Player in thisList;";
+				condition="vehicle player in thisList && {((getPosATL _x) select 2) < 1} count thislist > 0";
 				onActivation="_handle = [(thisList select 0)] execVM ""scripts\vehicle\service\vehicleService.sqf"";";
 				sizeA=6;
 				sizeB=6;
-				sizeC=1;
+				sizeC=-1;
 				interuptable=1;
 				repeatable=1;
 				activationBy="WEST";
