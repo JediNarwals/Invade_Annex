@@ -297,7 +297,7 @@ _badIDDsToClose =
 	314,632,1320,2121,148,163,129,169,157,131,69
 ];
 
-/* Use IDD White-List ? */ _UDW = false;	/* true or false */
+/* Use IDD White-List ? */ _UDW = true;	/* true or false */
 /* _allowedIDDs: Insert IDDs here to prevent them from being closed! */
 _allowedIDDs =
 [
