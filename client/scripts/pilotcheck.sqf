@@ -31,15 +31,15 @@ while { true } do {
 				_forbidden = [_veh turretUnit [0]];
 				if(player in _forbidden) then {
 					if (!_iampilot) then {
-						systemChat "Co-pilot is disabled on this vehicle";
-						player action ["getOut",_veh];
+						systemChat "You must be a pilot to fly this aircraft.";
+						player action ["Eject", _veh];
 					};
 				};
 			};
 			if(!_iampilot) then {
 				_forbidden = [driver _veh];
 				if (player in _forbidden) then {
-					systemChat "You must be a pilot to fly this aircraft";
+					systemChat "You must be a pilot to fly this aircraft.";
 					player action ["getOut", _veh];
 				};
 			};
