@@ -26,19 +26,20 @@ switch (_code) do
 		if (!isNull QS_seated) then { [] execVM "scripts\chairs\standup.sqf"; _handled = true; };
 		life_action_in_use = true;
 	};
-	//6 Nitro
+/*	//6 Nitro
 	case 7:
 	{
 		if(!_alt && !_ctrlKey) then {
 			[] spawn jedi_fnc_activateNitro;
 		};
 	};
+*/
 	//Y ping zeus
 	case 21:
 	{
 		if(!_alt && !_ctrlKey && !dialog) then
 		{
-			systemChat format["Please, no music...",_stp];
+			systemChat format["Zeus is disabled on this server.",_stp];
 			_handled = true;
 		};
 	};
@@ -76,12 +77,6 @@ if (_code in (actionKeys "User10")) then
 	if (soundVolume < 0.21) then { 0 fadeSound 1; }
 	else { 0 fadeSound 0.2; };
 	systemChat format["Sound volume changed to %1%2.", soundVolume * 100, "%"];
-	_handled = true;
-};
-
-if (_code==41 || _code in (actionKeys "SelectAll") || _code in (actionKeys "SwitchCommand")) then
-{
-	if (jedi_targetTag) then { jedi_targetTag = false };
 	_handled = true;
 };
 
