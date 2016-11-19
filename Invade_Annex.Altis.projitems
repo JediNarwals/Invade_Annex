@@ -400,8 +400,14 @@
     <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\machines\mission.fsm" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\alpha.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\AWFlag.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\bravo.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\charlie.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\chesty.png" />
+    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\delta.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\echo.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\foxtrot.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\hq.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\hunter_back.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\loadingscreen.jpg" />

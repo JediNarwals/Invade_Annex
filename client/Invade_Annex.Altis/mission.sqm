@@ -21656,7 +21656,7 @@ class Mission
 				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\alpha.jpg""];";
 			};
 			id=2942;
-			type="Land_Noticeboard_F";
+			type="SignAd_Sponsor_F";
 		};
 		class Item1039
 		{
@@ -21673,7 +21673,7 @@ class Mission
 				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\bravo.jpg""];";
 			};
 			id=2943;
-			type="Land_Noticeboard_F";
+			type="SignAd_Sponsor_F";
 		};
 		class Item1040
 		{
@@ -21690,7 +21690,7 @@ class Mission
 				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\charlie.jpg""];";
 			};
 			id=2944;
-			type="Land_Noticeboard_F";
+			type="SignAd_Sponsor_F";
 		};
 		class Item1041
 		{
@@ -21707,7 +21707,7 @@ class Mission
 				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\delta.jpg""];";
 			};
 			id=2945;
-			type="Land_Noticeboard_F";
+			type="SignAd_Sponsor_F";
 		};
 		class Item1042
 		{
@@ -21724,7 +21724,7 @@ class Mission
 				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\echo.jpg""];";
 			};
 			id=2946;
-			type="Land_Noticeboard_F";
+			type="SignAd_Sponsor_F";
 		};
 		class Item1043
 		{
@@ -21741,7 +21741,7 @@ class Mission
 				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\foxtrot.jpg""];";
 			};
 			id=2947;
-			type="Land_Noticeboard_F";
+			type="SignAd_Sponsor_F";
 		};
 	};
 };
