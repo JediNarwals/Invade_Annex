@@ -31,7 +31,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		
 		life_action_in_use = true;
 		
-		[[player,"Acts_carFixingWheel","switch",0],"jedi_fnc_animSync",true,false] spawn BIS_fnc_MP;
+		[[player,"Acts_carFixingWheel","switch",21],"jedi_fnc_animSync",true,false] spawn BIS_fnc_MP;
 		
 		while{true} do
 		{
