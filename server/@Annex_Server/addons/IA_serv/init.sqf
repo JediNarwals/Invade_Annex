@@ -75,11 +75,6 @@ diag_log "RESPAWN INVENTORIES START";
 
 diag_log "RESPAWN INVENTORIES FINISH";
 */
-diag_log ":: IA3 :: Setting up player ::";
-[] spawn jedi_fnc_hudSetup;
-[] call compile PreprocessFileLineNumbers "\IA_serv\config\configuration.sqf";
-[] call jedi_fnc_setupActions;													// Sets up the scroll actions
-diag_log ":: IA3 :: Player setup :: ";
 
 diag_log "STARTING BASE SET UP";
 

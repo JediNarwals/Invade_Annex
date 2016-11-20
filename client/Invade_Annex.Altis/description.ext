@@ -6,11 +6,11 @@
 //=================== On Load
 
 author = "Rarek [AW] & JediNarwals [TG] & Bornasm [TG]";
-overviewText = "Be part of the community at www.TacticalGaming.com\HQ.";
+overviewText = "Be part of the community at http://www.tacticalgaming.net/hq";
 OnLoadName = "Invade & Annex v.3 || TG v.1.5";
-OnLoadMission = "Be part of the community at www.TacticalGaming.com\HQ.";
+OnLoadMission = "Be part of the community at http://www.tacticalgaming.net/hq";
 loadScreen = "images\loadingScreen.jpg";
-overviewPicture = "images\loadingScreen.jpg";
+//overviewPicture = "images\loadingScreen.jpg";
 
 //=================== Random Configs
 disabledAI = 1;												// Put AI in slots of players. 1 = Disabled, 0 = Enabled
