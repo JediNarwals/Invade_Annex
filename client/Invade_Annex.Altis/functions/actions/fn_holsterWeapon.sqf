@@ -1,3 +1,9 @@
+/*
+	@file:		fn_holsterWeapon.sqf
+	@author:	JediNarwals [TG]
+	@description:
+			Holsters weapon.
+*/
 private["_state","_text"];
 _state = [_this,3,true,[true]] call BIS_fnc_param;
 if (vehicle player != player) exitWith {};

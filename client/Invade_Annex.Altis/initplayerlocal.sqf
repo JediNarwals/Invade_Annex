@@ -26,8 +26,6 @@ player enableFatigue false;												// Disables fatigue
 
 {_x addCuratorEditableObjects [[player],FALSE];} count allCurators;				// Adds players to Zeus
 
-removeAllActions player;														// Removes actions of player to setup for setupActions
-[] spawn jedi_fnc_setupActions;													// Sets up the scroll actions
 [] execVM "scripts\recoilFix.sqf";												// Fixes the recoil to be a bit more Realistic
 [] execVM "scripts\icons.sqf";													// blufor map tracker ~Quicksilver
 [] execVM "scripts\diary.sqf";													// diary tabs

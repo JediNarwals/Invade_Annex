@@ -1,6 +1,7 @@
 /*
 	File: fn_intro.sqf
 	Author: John "Paratus" VanderZwet
+			JediNarwals [TG]
 	
 	Description:
 	Displays introduction on init!

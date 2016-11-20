@@ -36,6 +36,7 @@ player forceWalk true;
 //[[player,"AinvPknlMstpSnonWnonDnon_medic_1","switch",3.3],"life_fnc_animSync",true,false] spawn BIS_fnc_MP;
 animRepeat = true;
 [] spawn {
+	player action ["hideWeapon",player,player,100];
 	while{animRepeat} do {
 		if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1"};
 		sleep 1;
@@ -77,10 +78,12 @@ if (_unit == player) then
 {
 	_unit setDamage 0;
 	titleText["You give yourself a blood transfusion.","PLAIN"];
+	player action ["hideWeapon",player,player,0];
 }
 else
 {
 	_unit setDamage 0;
 	titleText[format["You gave %1 a blood transfusion.", name _unit],"PLAIN"];
+	player action ["hideWeapon",player,player,0];
 };
 life_action_in_use = false; //Unlock controls

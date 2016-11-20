@@ -14,7 +14,6 @@ waitUntil {!isNull findDisplay 49}; // 49 = Esc menu
 
 _puid = getPlayerUID player;
 _display49 = (findDisplay 49);
-//_puid = player getPlayerUID;
 _ESCtext = 
 	      
 		(_display49 displayCtrl 2) ctrlEnable false;      
