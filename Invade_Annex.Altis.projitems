@@ -129,7 +129,6 @@
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\notificons\tactical_mission.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\notificons\tactical_mission_completed.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\pfc_gs.paa" />
-    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\players.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\wooddark.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\init.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\initplayerlocal.sqf" />
