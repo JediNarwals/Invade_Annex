@@ -111,11 +111,16 @@
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\functions\units\fn_setBehaviour.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\functions\units\fn_spawnEnemy.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\functions\units\macro.h" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\alpha.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\AWFlag.paa" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\bravo.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\CautionHeli00.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\CautionHeli01.paa" />
-    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\chesty.paa" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\charlie.paa" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\delta.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\digi_black.paa" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\echo.paa" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\foxtrot.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\health.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\hints\main\agiamarina.paa" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\notificons\main_objective.paa" />
@@ -135,6 +140,10 @@
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\init\player.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\init\server.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\KRON_Strings.sqf" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\machines\base.fsm" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\machines\emplacement.fsm" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\machines\main.fsm" />
+    <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\machines\mission.fsm" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\mission.sqm" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\missions\priority\artillery\init.sqf" />
     <None Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\missions\priority\artillery\mission.fsm" />
@@ -393,21 +402,8 @@
     <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\functions\units\fn_spawnEnemy.sqf" />
     <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\functions\units\macro.h" />
     <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\init.sqf" />
-    <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\machines\base.fsm" />
-    <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\machines\emplacement.fsm" />
-    <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\machines\main.fsm" />
-    <None Include="$(MSBuildThisFileDirectory)server\%40Annex_Server\addons\IA_serv\machines\mission.fsm" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\alpha.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\AWFlag.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\bravo.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\charlie.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\chesty.png" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\delta.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\echo.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\foxtrot.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\hq.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\hunter_back.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\images\loadingscreen.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)client\Invade_Annex.Altis\stringtable.xml" />

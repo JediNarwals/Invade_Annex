@@ -1,11 +1,22 @@
-private["_markers", "_local", "_path", "_x"];
+/*
+	@file:		fn_deleteMarker.sqf
+	@author:	Rarek [AW]
+				JediNarwals [TG]
+	@description:
+			Deletes markers.
+*/
+if(isDedicated) exitWith {/*Go away Server*/};
 
-_markers = [_this,0,[],["",[]]] call BIS_fnc_param;
+private["_marker", "_local", "_path", "_x"];
+
+_marker = [_this,0,[],["",[]]] call BIS_fnc_param;
 _local = [_this,1,false,[true]] call BIS_fnc_param;
+
+_marker = []; 
 
 if (typeName _markers != "ARRAY") then
 {
-	_markers = [_markers];
+	_marker = [_marker];
 };
 
 if (!_local) then
@@ -19,8 +30,8 @@ if (!_local) then
 		};
 
 		deleteMarker _x;
-	} forEach _markers;
-	[[_markers, true], "AW_fnc_deleteMarker", true, false] call BIS_fnc_MP;
+	} forEach _marker;
+	[[_marker, true], "AW_fnc_deleteMarker", true, false] call BIS_fnc_MP;
 } else {
 	if ((count localMarkers) > 0) then
 	{
@@ -31,6 +42,6 @@ if (!_local) then
 				localMarkers = [localMarkers, (_path select 0)] call BIS_fnc_removeIndex;
 				deleteMarkerLocal _x;
 			};
-		} forEach _markers;
+		} forEach _marker;
 	};
 };

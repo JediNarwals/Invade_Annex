@@ -16,13 +16,13 @@ item11[] = {"Create_Task___Ma",2,250,50.000000,400.000000,150.000000,450.000000,
 item12[] = {"Task_sent_to_all",8,218,175.000000,400.000000,275.000000,450.000000,0.000000,"Task" \n "sent to all" \n "players"};
 item13[] = {"Choose_Sub_objec",2,250,300.000000,400.000000,400.000000,450.000000,0.000000,"Choose" \n "Sub-objective"};
 item14[] = {"sub__objective_c",8,218,425.000000,400.000000,525.000000,450.000000,0.000000,"sub-" \n "objective" \n "chosen"};
-item15[] = {"Trigger_clean_up",2,250,425.000000,100.000000,525.000000,150.000000,0.000000,"Trigger" \n "clean-up" \n "scripts"};
+item15[] = {"Trigger_clean_up",2,4346,425.000000,100.000000,525.000000,150.000000,0.000000,"Trigger" \n "clean-up" \n "scripts"};
 item16[] = {"Wait_random_time",4,218,300.000000,100.000000,400.000000,150.000000,0.000000,"Wait" \n "random" \n "time"};
 item17[] = {"Wait_for_complet",2,250,425.000000,325.000000,525.000000,375.000000,0.000000,"Wait" \n "for" \n "completion"};
 item18[] = {"Next_check_",4,218,425.000000,250.000000,525.000000,300.000000,0.000000,"Next" \n "check?"};
 item19[] = {"Do_the_checks",2,250,425.000000,175.000000,525.000000,225.000000,0.000000,"Do" \n "the" \n "checks"};
 item20[] = {"Sub__objective_not",4,218,300.000000,250.000000,400.000000,300.000000,5.000000,"Sub-" \n "objective not" \n "complete?"};
-item21[] = {"Mission_over",8,4314,550.000000,100.000000,650.000000,150.000000,0.000000,"Mission" \n "over"};
+item21[] = {"Mission_over",8,218,550.000000,100.000000,650.000000,150.000000,0.000000,"Mission" \n "over"};
 item22[] = {"Enemy_not_below",4,218,550.000000,250.000000,650.000000,300.000000,4.000000,"Enemy" \n "not below" \n "threshold?"};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -53,7 +53,7 @@ link25[] = {20,17};
 link26[] = {21,15};
 link27[] = {22,17};
 globals[] = {0.000000,0,0,0,0,640,480,1,57,6316128,1,-230.966644,703.784546,635.231201,-7.530579,1169,885,1};
-window[] = {2,-1,-1,-1,-1,1063,250,1867,250,3,1187};
+window[] = {2,-1,-1,-1,-1,913,100,1717,100,3,1187};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -212,7 +212,8 @@ class FSM
                          "_name = getText (missionConfigFile >> ""AW_main"" >> _location >> ""title"");" \n
                          "" \n
                          "[[""type"", ""main_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
-                         "_markers = [""main"", format[""main_%1"", _number], _pos, _name] call AW_fnc_createJIPstateMarker;"/*%FSM</STATEINIT""">*/;
+                         "_marker = [""main"", format[""main_%1"", _number], _pos, _name] call AW_fnc_createJIPstateMarker;" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -249,7 +250,7 @@ class FSM
                          "for ""_i"" from 1 to _sub_count do" \n
                          "{" \n
                          "	_sub_mission = _sub_missions call BIS_fnc_selectRandom;" \n
-                         "	_sub = [""sub"", [_sub_mission]] execFSM ""\IA_serv\machines\mission.fsm"";" \n
+                         "	_sub = [""sub"", [_sub_mission]] execFSM ""machines\mission.fsm"";" \n
                          "" \n
                          "	_subs = _subs + [_sub];" \n
                          "};"/*%FSM</STATEINIT""">*/;
@@ -276,8 +277,12 @@ class FSM
                         name = "Trigger_clean_up";
                         itemno = 15;
                         init = /*%FSM<STATEINIT""">*/"_timeout = (time + (30 + (round (random 90))));" \n
-                         "[_markers] call AW_fnc_deleteMarker;" \n
-                         "[_local] call AW_fnc_deleteMarker;" \n
+                         "[_marker] call AW_fnc_deleteMarker;" \n
+                         "//[_local] call AW_fnc_deleteMarker;" \n
+                         "//deleteMarker _marker;" \n
+                         "//deleteMarkerLocal _local;" \n
+                         "//deleteMarker _local;" \n
+                         "//deleteMarkerLocal _marker;" \n
                          "//DEBUG TIME"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -368,7 +373,7 @@ class FSM
                                         action=/*%FSM<ACTION""">*/"//DEBUG - Don't show taskSetState notification!" \n
                                          "//[""main"", ""SUCCEEDED"", false] call BIS_fnc_taskSetState;" \n
                                          "[[""type"", ""main_completed""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
-                                         "[_markers] call AW_fnc_deleteMarker;" \n
+                                         "//[_markers] call AW_fnc_deleteMarker;" \n
                                          "[_local] call AW_fnc_deleteMarker;" \n
                                          "" \n
                                          "_priority = _priority + 10;"/*%FSM</ACTION""">*/;

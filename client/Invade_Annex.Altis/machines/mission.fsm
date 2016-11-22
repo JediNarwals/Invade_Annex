@@ -56,8 +56,8 @@ link26[] = {19,5};
 link27[] = {20,22};
 link28[] = {21,3};
 link29[] = {23,24};
-globals[] = {0.000000,0,0,0,0,640,480,1,35,6316128,1,140.183289,1018.052429,466.863464,-217.966293,764,596,1};
-window[] = {0,-1,-1,-1,-1,820,319,1759,53,1,782};
+globals[] = {0.000000,0,0,0,0,640,480,1,35,6316128,1,48.007023,1110.228638,538.770630,-289.873444,764,596,1};
+window[] = {0,-1,-1,-1,-1,967,200,1640,200,1,782};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -162,8 +162,12 @@ class FSM
                 {
                         name = "Get_result_from";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"[_markers] call AW_fnc_deleteMarker;" \n
-                         "[_local] call AW_fnc_deleteMarker;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"[_marker] call AW_fnc_deleteMarker;" \n
+                         "//[_local] call AW_fnc_deleteMarker;" \n
+                         "//deleteMarker _marker;" \n
+                         "//deleteMarker _local;" \n
+                         "//deleteMarkerLocal _marker;" \n
+                         "//deleteMarkerLocal _local;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -368,10 +372,11 @@ class FSM
                          "" \n
                          "_fuzzyPos = [_pos, _radius] call AW_fnc_getFuzzyPos;" \n
                          "" \n
-                         "_markers = [_type, _code, _fuzzyPos, _title] call AW_fnc_createJIPstateMarker;" \n
+                         "_marker = [_type, _code, _fuzzyPos, _title] call AW_fnc_createJIPstateMarker;" \n
+                         "//_local = _marker;" \n
                          "" \n
                          "[[""type"", format[""%1_created"", _type]], [""message"", _title]] call AW_fnc_showNotification;" \n
-                         "[_code, true, [_description, _title, (_markers select 1)], _fuzzyPos, ""CREATED"", 5, false, true] call BIS_fnc_setTask;"/*%FSM</STATEINIT""">*/;
+                         "[_code, true, [_description, _title, (_marker select 1)], _fuzzyPos, ""CREATED"", 5, false, true] call BIS_fnc_setTask;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

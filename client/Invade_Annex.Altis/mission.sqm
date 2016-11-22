@@ -21653,7 +21653,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\alpha.jpg""];";
+				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\alpha.paa""];";
 			};
 			id=2942;
 			type="SignAd_Sponsor_F";
@@ -21670,7 +21670,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\bravo.jpg""];";
+				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\bravo.paa""];";
 			};
 			id=2943;
 			type="SignAd_Sponsor_F";
@@ -21687,7 +21687,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\charlie.jpg""];";
+				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\charlie.paa""];";
 			};
 			id=2944;
 			type="SignAd_Sponsor_F";
@@ -21704,7 +21704,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\delta.jpg""];";
+				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\delta.paa""];";
 			};
 			id=2945;
 			type="SignAd_Sponsor_F";
@@ -21721,7 +21721,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\echo.jpg""];";
+				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\echo.paa""];";
 			};
 			id=2946;
 			type="SignAd_Sponsor_F";
@@ -21738,7 +21738,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\foxtrot.jpg""];";
+				init="this enableSimulation false;this allowDamage false; this setObjectTexture [0,""images\foxtrot.paa""];";
 			};
 			id=2947;
 			type="SignAd_Sponsor_F";

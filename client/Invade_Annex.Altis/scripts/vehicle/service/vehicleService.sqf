@@ -41,6 +41,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air") OR (
 			if(isEngineOn _veh) exitWith {life_interrupted = true;};
 			if(!alive player) exitWith {life_interrupted = true;};
 			if(life_interrupted) exitWith {life_interrupted = true;};
+			if(player != vehicle player) exitWith {life_interrupted = true;};
 		};
 		life_action_inUse = false;
 		5 cutText ["","PLAIN"];

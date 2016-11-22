@@ -1,4 +1,5 @@
 _cleanAll = false;
+_markers = [];
 if (count _this < 1) then
 {
 	_cleanAll = true;
@@ -37,3 +38,6 @@ if (!_cleanAll) exitWith {};
 
 	if (_canDeleteGroup && !isNull _x) then { deleteGroup _x; };
 } forEach allGroups;
+
+deleteMarker _markers;
+deleteMarkerLocal _markers;

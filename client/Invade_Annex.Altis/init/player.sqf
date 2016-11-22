@@ -13,22 +13,6 @@ if (isNull player) then
 
 [player] spawn jedi_fnc_intro;
 
-/*
-[] spawn
-{
-	while {true} do
-	{
-		_rem = [];
-		_units = getPosATL player nearEntities [["Man","Car","Air","Ship"],20];
-		_units = _units - [vehicle player];
-		{ if (_x isKindOf "Animal") then { _rem pushBack _x} } forEach _units;
-		_units = _units - _rem;
-		jedi_tag_cache = jedi_tag_units;
-		jedi_tag_units = _units;
-		sleep 1.3;
-	};
-};
-*/
 
 /*
 	This is a little bit of code that checks you Squad association with the Arma3.com squads page
