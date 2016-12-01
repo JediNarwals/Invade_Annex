@@ -2,10 +2,10 @@
 	File: infiSTAR_config.sqf
 	Author: Chris(tian) "infiSTAR" Lorenzen
 	Contact: infiSTAR23@gmail.com
-
+	
 	Description:
 	Arma AntiHack & AdminTools - infiSTAR.de
-
+	
 	ON LINUX YOU NEED THIS PARAMETER: -profiles
 */
 
@@ -14,14 +14,14 @@
 	"serverCommandPassword" is serverCommandPassword - in your servers config.cfg
 	if your config.cfg does not have serverCommandPassword yet, simply add it in a new line:
 	serverCommandPassword = "changeme";
-
+	
 	This is   VERY IMPORTANT   as it is needed to KICK & BAN people.
 */
 _serverCommandPassword = 'armaisthebest';
 
 /*
 	"_passwordAdmin" is passwordAdmin - in your servers config.cfg, needed for servercommands from client
-
+	
 	This is used to be able to use the "login" function ingame. Will log you in as Arma "Admin".
 */
 _passwordAdmin = 'armaisthebest';
@@ -92,6 +92,7 @@ _use_html_load_on_adminmenu = false;		/* default and recommended is TRUE. infiST
 		76561198195361963 ~ Bornasm			DEV
 		76561198137610055 ~ Sierra Mike
 */
+
 _adminUIDandAccess =
 [
 	[
@@ -119,7 +120,7 @@ _adminUIDandAccess =
 		]
 	],
 	[
-		['76561198012590280','76561198073657954','76561198142808459','76561198014933275','76561198008589356','76561198119321587','76561198031283177','76561198195361963','76561198137610055','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
+		['76561198012590280','76561198073657954','76561198142808459','76561198022394569','76561198037805024','76561198014933275','76561197960385979','76561197960385979','76561198045961511','76561198103704058','76561198195361963','76561198137610055','...'],	// Admins with UIDs in this Array have their Access defined in the array below.
 		[
 			'Teleport On Map Click','Teleport - Target To Me','Teleport - Me To Target','Teleport In Facing Direction (10m steps)',
 			'spectating','AdminConsole','Delete Vehicle','FlyUp','EjectTarget','ToggleVehLock','UpgradeBuilding','ShowGear',
@@ -171,14 +172,13 @@ _adminUIDandAccess =
 /*            many checks should be set to true instead of false.                    */
 /*     These are just diabled because the average user doesn't read this file..      */
 /* ********************************************************************************* */
-/*  Items Added Check    */ _IAC = true;	/* true or false */	/* checks if Items are being added unrightful! */
-/*  Local Vehicle Check  */ _LVC = true;	/* true or false */
+/*  Items Added Check    */ _IAC = false;	/* true or false */	/* checks if Items are being added unrightful! */
+/*  Local Vehicle Check  */ _LVC = false;	/* true or false */
 /*  unitRecoil checks    */ _URC = false;	/* true or false */	/* checks unitRecoilCoefficient and resets default unitRecoilCoefficient */
 /*  Notification check   */ _UNC = false;	/* true or false */	/* _UNC = false; on AltisLife! - showNotification check */
-/*  Use MPInterrupt check*/ _UMP = true;	/* true or false */
-/*  Check BTTNs on D49   */ _B49 = true;	/* true or false */	/* will announce: BadButton on 49 */
+/*  Use MPInterrupt check*/ _UMP = false;	/* true or false */
+/*  Check BTTNs on D49   */ _B49 = false;	/* true or false */	/* will announce: BadButton on 49 */
 /*  whitelist for _B49   */ _excludedButtons = [];	/* Will Kick for BadButton XYZ if a customnized button is not white-listed here. Example: _excludedButtons = [1010]; */
-/*  Change MpFramework   */ _MPF = true;	/* true or false */	/* important to protect AltisLife */
 /*  Check Actions Plr    */ _CAP = false;	/* true or false */	/* "Actions: xxx/xxx possible scroll menu hack (or you added custom actions..)" */
 /*  Remove Actions Plr   */ _OAP = false;	/* true or false */	/* Remove ALL Actions on Player Object: (mousewheel actions) needs to be  false  for AltisLife for e.g. gathering */
 /*  Remove Actions Objs  */ _OAO = false;	/* true or false */	/* Remove ALL Actions on Objects near Player: (mousewheel actions) needs to be  false  when using e.g. IgiLoad */
@@ -195,7 +195,7 @@ _adminUIDandAccess =
 /*  onEachFrame function */ _rOEF = {};		/* this needs to be CODE */
 /*  custom HandleDamage  */ _CHD = {};		/* this needs to be CODE */
 /*  Revert allowDamage   */ _RAD = false;	/* true or false */	/* if you have safezones using "player allowDamage false;" or similar.. set _RAD = false; */
-/*  Revert HandleDamage  */ _RHD = true;	/* true or false */	/* Needs to be  false  for Paintball script */
+/*  Revert HandleDamage  */ _RHD = false;	/* true or false */	/* Needs to be  false  for Paintball script */
 /*  EH_Draw3D check      */ _C3D = false;	/* true or false */	/* announces: "EH_Draw3D x should be y" */
 /*  MouseMoving EH check */ _MOH = false;	/* true or false */	/* announces: "MouseMoving EventHandler added" - needs to be disabled for UAV scripts and such.. */
 /*  MouseButton EH check */ _MBC = false;	/* true or false */	/* announces: "MouseButton EventHandler added" */
@@ -203,8 +203,8 @@ _adminUIDandAccess =
 /*  Revert KeyUp         */ _RUK = false;	/* true or false */	/* recommended:  true  Removes custom KeyUps and sets back the default ones (false with Task Force Radio ?) */
 /*  Revert KeyDown       */ _RDK = false;	/* true or false */	/* recommended:  true  Removes custom KeyDowns and sets back the default ones (false with Task Force Radio ?) */
 /*  Check Keybinds       */ _CKB = false;	/* true or false */	/* recommended:  true  _RKB needs to be true! Checks Keybinds, if it finds added ones it shows: "KeyBinds added   %1 should be %2" */
-/*  check MapSingleClick */ _OMC = true;	/* true or false */	/* announces: "MapSingleClick modified", if modification is found - NEEDS _MBC to be true! */
-/*  Remove Hit Handler   */ _REH = true;	/* true or false */	/* Needs to be  false  for Paintball script */
+/*  check MapSingleClick */ _OMC = false;	/* true or false */	/* announces: "MapSingleClick modified", if modification is found - NEEDS _MBC to be true! */
+/*  Remove Hit Handler   */ _REH = false;	/* true or false */	/* Needs to be  false  for Paintball script */
 /*  Revert InventoryOpen */ _RIO = false;	/* true or false */	/* AltisLife only: Sets the custom InventoryOpened Handler */
 /*  Revert Killed EH     */ _RKH = false;	/* true or false */
 /*  "" Respawn Handler   */ _RRH = false;	/* true or false */	/* Needs to be  false  for some custom loadout scripts */
@@ -223,7 +223,7 @@ _adminUIDandAccess =
 		diag_log format['%1(%2) connected!',_name,_uid];
 	};
 */
-_customOnPlayerConnected = {};
+_customOnPlayerConnected = {};	
 
 
 
@@ -260,8 +260,8 @@ _RPR = false;	/* true or false */
 _EpochIndestructible = false;
 
 
-/*  CommandingMenu Check */ _CMC = true;	/* true or false */
-/*  Close ALL CMD-Menus  */ _KCM = true;	/* true or false */	/* Just closes All Commandingmenus (ignores the white-list below) */
+/*  CommandingMenu Check */ _CMC = false;	/* true or false */
+/*  Close ALL CMD-Menus  */ _KCM = false;	/* true or false */	/* Just closes All Commandingmenus (ignores the white-list below) */
 /* _cMenu: if '_CMC = true;' then this array holds the ALLOWED Commanding Menus */
 _cMenu =
 [
@@ -297,7 +297,7 @@ _badIDDsToClose =
 	314,632,1320,2121,148,163,129,169,157,131,69
 ];
 
-/* Use IDD White-List ? */ _UDW = true;	/* true or false */
+/* Use IDD White-List ? */ _UDW = false;	/* true or false */
 /* _allowedIDDs: Insert IDDs here to prevent them from being closed! */
 _allowedIDDs =
 [
@@ -305,7 +305,7 @@ _allowedIDDs =
 	-3000,-1900,-1500,-1338,-1300,-1200,-13,-8,-7,-6,-5,
 	0,4,5,6,8,12,18,24,46,49,50,54,55,63,70,129,131,148,151,154,163,169,174,262,602,999,
 	66600,77700,316000,
-
+	
 	// Different Displays from different mods/additions
 	// (might not be needed at all but I've gotten so many emails like "INFISTAR CLOSES ATM MENU ON ALTIS LIFE.. people need to read this file..)
 	160,
@@ -319,8 +319,8 @@ _allowedIDDs =
 
 
 
-/*  Use Memoryhack check */ _UMH = true;	/* true or false */
-/*  Use on(Un)Load check */ _UOL = true;	/* true or false */
+/*  Use Memoryhack check */ _UMH = false;	/* true or false */
+/*  Use on(Un)Load check */ _UOL = false;	/* true or false */
 /* _onLoadUnload1: The AntiHack will test if the client has the same entry as the server. (only if _UOL = true;) */
 _onLoadUnload1 = [
 	'RscDisplayCustomArcade','RscDisplayArcadeMap','RscDisplayArcadeModules','RscDisplayArcadeGroup',
@@ -358,9 +358,9 @@ _badVarWhitelist =
 /* _blacklistedVariables: The AntiHack will check if one of these variables is existing for the client (only if _UBV = true;) */
 _blacklistedVariables =
 [
-/*	'arsenalOpened','BIS_fnc_arsenal_fullArsenal','n912','TBMKnlist','PLAY','ALTISLIFENEXT3','SOMEONE_dsfnsjf',
+	'arsenalOpened','BIS_fnc_arsenal_fullArsenal','n912','TBMKnlist','PLAY','ALTISLIFENEXT3','SOMEONE_dsfnsjf',
 	'FND_fnc_subs','setcash','Dummy_Ghost','entf','check_loaded','LY_Menu','AndysClosed','GOLDENS_GLOBAL_SHIT_YEAH','Fanatic_Main_Bereich',
-	'imgoingnukeyou','fnc_usec_damageHandler',
+	'imgoingnukeyou','fnc_usec_damageHandler','CheatCurator','andy_loopz','InitFileOne',
 	'Status_BB','TZ_BB_A3','TZ_BB_KB_Hint','TZ_BB_BindHandler','AH_BRAZZERS_TZ_BB','kamakazi_lystic','fuckfest','LYSTIC_MENU_LOADED','D_AMEZ_COA',
 	'Intro','Repair','Heal','T3le','TNK','I_like_turtles','BIGM','GMod','E3p','Does_Tonic_Like_to_take_Turtle_penis_in_the_ass_LODESTARS',
 	'lel','vars','PSwap','toLower_new','BCast','thfile','tlmadminrq','infiSTARBLACK','carepkg','scrollAim','BlurExec','sbpc','CALLRE',
@@ -450,7 +450,6 @@ _blacklistedVariables =
 	'aKNoEscort','aKEscort','aKtroll','aKTPall','aKUnrestrain','aKNoEscortMe','aKNoTaze','aKJailplayer','aKLisense','riasgremory_titans_shit_reold','Tonic_merde','jaimepaslepoisin_HLEAL','TTTT_IIII___TTTTTTT_RAP_FR','TTTT_IIII___TTTTTTT_REPGA',
 	'TTTT_IIII___TTTTTTT_REPGAs','jaimepaslepoisin_HLEAL','Root_Main4','Root_Pistol4','Root_Rifle4','Root_Machinegun4','Root_Sniper4','Root_Launcher4','Root_Attachement4',
 	'VAR56401668319_secret','myPubVar','XXMMWW_boxquad','Init_Menu_Fury','A3RANDVARrpv1tpv','fnc_nestf','XXMMWW_keybinds','smissles','wooden_velo','vabox','bis_fnc_camera_target'
-*/
 ];
 
 
@@ -463,7 +462,7 @@ _VehicleWhiteList =
 	'O_T_LSV_02_unarmed_F','I_C_Boat_Transport_02_F','C_Scooter_Transport_01_F',
 	'O_T_VTOL_02_vehicle_F','B_CTRG_Heli_Transport_01_tropic_F','C_Plane_Civil_01_racing_F','O_LSV_02_armed_F',
 	'I_C_Plane_Civil_01_F','B_Boat_Armed_01_minigun_F','B_LSV_01_armed_F','O_LSV_02_unarmed_F','C_Boat_Transport_02_F',
-	'B_T_VTOL_01_vehicle_F','B_CTRG_LSV_01_light_F','B_LSV_01_unarmed_F','B_T_VTOL_01_infantry_F','I_C_Offroad_02_unarmed_F'
+	'B_T_VTOL_01_vehicle_F','B_CTRG_LSV_01_light_F','B_LSV_01_unarmed_F','B_T_VTOL_01_infantry_F','I_C_Offroad_02_unarmed_F'  
 ];
 _ForbiddenVehicles =
 [
@@ -626,15 +625,15 @@ try {
 	for '_i' from 0 to (count _cfgPatches - 1) do
 	{
 		_patchClass = _cfgPatches select _i;
-		if(configName _patchClass == 'A3_epoch_code')then
+		if(configName _patchClass == 'A3_epoch_code')exitWith
 		{
 			_MOD = 'Epoch';
 		};
-		if(configName _patchClass == 'life_server')then
+		if(configName _patchClass == 'life_server')exitWith
 		{
 			_MOD = 'AltisLife';
 		};
-		if(configName _patchClass == 'exile_server')then
+		if(configName _patchClass == 'exile_server')exitWith
 		{
 			throw '<infiSTAR.de> This is not the Exile version and it would need many changes to run with Exile. Please go to www.infiSTAR.de and get the Exile version.';
 		};
@@ -657,5 +656,5 @@ catch
 /* ********************************************************************************* */
 /* *********************************www.infiSTAR.de********************************* */
 /* *******************Developed by infiSTAR (infiSTAR23@gmail.com)****************** */
-/* **************infiSTAR Copyright?? 2011 - 2016 All rights reserved.************** */
+/* **************infiSTAR Copyright®© 2011 - 2016 All rights reserved.************** */
 /* ****DayZAntiHack.com***DayZAntiHack.de***ArmaAntiHack.com***Arma3AntiHack.com**** */
