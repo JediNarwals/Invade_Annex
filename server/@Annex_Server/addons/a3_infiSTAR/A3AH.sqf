@@ -542,7 +542,6 @@ _A3AHstring = "
 		};
 		if(!alive _clientObject)exitWith{
 			format['%1(%2) CLIENT WITH ID [%3] NOT ALIVE',_clientName,_clientUID,_clientID] call FNC_A3_TOKENLOG;
-			[_clientName,_clientUID] call FNC_INFISERVERKICK;
 		};
 		
 		_owner = owner _clientObject;
