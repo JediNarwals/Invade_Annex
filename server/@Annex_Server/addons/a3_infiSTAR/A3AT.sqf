@@ -10,9 +10,9 @@
 /* **************infiSTAR Copyright®© 2011 - 2016 All rights reserved.************** */
 /* *********************************www.infiSTAR.de********************************* */
 comment 'Antihack & AdminTools - Christian Lorenzen - www.infiSTAR.de - License: (CC)';
-VERSION_DATE_IS = '01-Dec-2016 19-28-44#2074';
+VERSION_DATE_IS = '31-Jul-2016 16-48-22#2074';
 infiSTAR_MAIN_CODE = "
-	_log = format['%1 <TacticalGaming.net> Loading Menu...',time];_log call FN_SHOW_LOG;diag_log _log;
+	_log = format['%1 <TacticalGaming.net> Loading Menu...',time];systemchat _log;diag_log _log;
 	fnc_admin_c = compileFinal 'compile _this';
 	fnc_admin_cc = compileFinal 'call compile _this';
 	fnc_createctrl = {
@@ -231,7 +231,7 @@ FN_SHOW_LOG = {
 			};
 		};
 	"; }; infiSTAR_MAIN_CODE = infiSTAR_MAIN_CODE + "
-	_log = '<TacticalGaming.net> config data loaded...!';diag_log _log;
+	_log = '<infiSTAR.de> config data loaded...!';diag_log _log;
 	fnc_setFocus = {
 		disableSerialization;
 		ctrlSetFocus ((findDisplay MAIN_DISPLAY_ID) displayCtrl LEFT_CTRL_ID);
@@ -703,8 +703,8 @@ FN_SHOW_LOG = {
 	};
 	fnc_cloneGear = {
 		_unit = _this;
-		if(isNil'_unit')exitWith{'_unit not defined' call FN_SHOW_LOG;};
-		if(isNull _unit)exitWith{'_unit OBJECT-NULL' call FN_SHOW_LOG;};
+		if(isNil'_unit')exitWith{systemchat'_unit not defined';};
+		if(isNull _unit)exitWith{systemchat'_unit OBJECT-NULL';};
 		_export = '';
 		_fnc_addMultiple = {
 			_items = _this select 0;
@@ -885,9 +885,9 @@ FN_SHOW_LOG = {
 				if(_txt in infiSTAR_LoadOutARRay)then
 				{
 					_id = infiSTAR_LoadOutARRay find _txt;
-					if(_id == -1)exitWith{'can not find Loadout' call FN_SHOW_LOG;};
+					if(_id == -1)exitWith{systemchat 'can not find Loadout';};
 					_return = infiSTAR_LoadOutARRay deleteAt _id;
-					format['Deleted Loadout: %1',_return] call FN_SHOW_LOG;
+					systemchat format['Deleted Loadout: %1',_return];
 					profileNamespace setVariable['infiSTAR_LoadOutARRay',infiSTAR_LoadOutARRay];saveprofileNamespace;
 					_fnc_scriptName='';[player, [profileNamespace, _txt]] call BIS_fnc_deleteInventory;
 				}
@@ -895,12 +895,12 @@ FN_SHOW_LOG = {
 				{
 					_exit = false;
 					{if(toUpper _txt isEqualTo toUpper _x)exitWith{_exit=true};} forEach infiSTAR_Loadouts;
-					if(_exit)exitWith{'can not delete preset Admin Loadouts' call FN_SHOW_LOG;};
+					if(_exit)exitWith{systemchat 'can not delete preset Admin Loadouts';};
 					
 					_id = missionNameSpaceLoadouts find _txt;
-					if(_id == -1)exitWith{'can not find Loadout' call FN_SHOW_LOG;};
+					if(_id == -1)exitWith{systemchat 'can not find Loadout';};
 					_return = missionNameSpaceLoadouts deleteAt _id;
-					format['Deleted Loadout: %1',_return] call FN_SHOW_LOG;
+					systemchat format['Deleted Loadout: %1',_return];
 				};
 			};
 			call fnc_load_LoadOuts;
@@ -919,16 +919,16 @@ FN_SHOW_LOG = {
 		];
 		fnc_ButtonClick_44468 = {
 			_txt = ctrlText 44469;
-			if(_txt == '')exitWith{'Type a Loadout name to save!' call FN_SHOW_LOG;};
-			if(count _txt > 30)exitWith{'Loadout name should have max 30 characters!' call FN_SHOW_LOG;};
-			if(isNull SELECTED_TARGET_PLAYER)exitWith{'Player selected is NULL-OBJECT' call FN_SHOW_LOG;};
+			if(_txt == '')exitWith{systemchat 'Type a Loadout name to save!';};
+			if(count _txt > 30)exitWith{systemchat 'Loadout name should have max 30 characters!';};
+			if(isNull SELECTED_TARGET_PLAYER)exitWith{systemchat 'Player selected is NULL-OBJECT';};
 			_exit = false;
 			{if(toUpper _txt isEqualTo toUpper _x)exitWith{_exit=true};} forEach infiSTAR_Loadouts;
-			if(_exit)exitWith{'can not overwrite preset Admin Loadouts' call FN_SHOW_LOG;};
+			if(_exit)exitWith{systemchat 'can not overwrite preset Admin Loadouts';};
 			
 			_exit = false;
 			{if(toUpper _txt isEqualTo toUpper _x)exitWith{_exit=true};} forEach missionNameSpaceLoadouts;
-			if(_exit)exitWith{'can not overwrite missionNameSpaceLoadouts Admin Loadouts' call FN_SHOW_LOG;};
+			if(_exit)exitWith{systemchat 'can not overwrite missionNameSpaceLoadouts Admin Loadouts';};
 			
 			if!(_txt in infiSTAR_LoadOutARRay)then
 			{
@@ -958,7 +958,7 @@ FN_SHOW_LOG = {
 				if(_txt in infiSTAR_LoadOutARRay)then
 				{
 					_id = infiSTAR_LoadOutARRay find _txt;
-					if(_id == -1)exitWith{('can not find Loadout: '+_txt) call FN_SHOW_LOG;};
+					if(_id == -1)exitWith{systemchat ('can not find Loadout: '+_txt);};
 					
 					if(isNil'FNC_CUSTOM_fn_exportInventory')then
 					{
@@ -971,11 +971,11 @@ FN_SHOW_LOG = {
 					};
 					_fnc_scriptName='';_loadout = [player, [profileNamespace, _txt]] call FNC_CUSTOM_fn_exportInventory;
 					diag_log _loadout;
-					('Loadout: '+_txt+' saved to client RPT file!') call FN_SHOW_LOG;
+					systemchat ('Loadout: '+_txt+' saved to client RPT file!');
 				}
 				else
 				{
-					'Only Loadouts saved with this tool can be exported!' call FN_SHOW_LOG;
+					systemchat 'Only Loadouts saved with this tool can be exported!';
 				};
 			};
 			call fnc_load_LoadOuts;
@@ -997,7 +997,8 @@ FN_SHOW_LOG = {
 			[_export,SELECTED_TARGET_PLAYER] call admin_d0_target;
 			
 			_log = format['Cloned on %1(%2)!',name SELECTED_TARGET_PLAYER,getPlayerUID SELECTED_TARGET_PLAYER];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		(findDisplay MAIN_DISPLAY_ID displayCtrl 44471) ctrlSetEventHandler['ButtonClick','call fnc_ButtonClick_44471'];
 		(findDisplay MAIN_DISPLAY_ID displayCtrl 44471) ctrlSetText 'CLONE ON SELECTED';
@@ -1016,7 +1017,8 @@ FN_SHOW_LOG = {
 			call compile _export;
 			
 			_log = format['Cloned %1(%2) on yourself!',name SELECTED_TARGET_PLAYER,getPlayerUID SELECTED_TARGET_PLAYER];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		(findDisplay MAIN_DISPLAY_ID displayCtrl 44472) ctrlSetEventHandler['ButtonClick','call fnc_ButtonClick_44472'];
 		(findDisplay MAIN_DISPLAY_ID displayCtrl 44472) ctrlSetText 'CLONE FROM SELECTED';
@@ -1177,7 +1179,6 @@ FN_SHOW_LOG = {
 		};
 	};
 	fnc_HTML_LOAD = {
-		disableSerialization;
 		_html = uiNamespace getVariable 'RscHTML_infiSTAR_Admin';
 		if(ctrlHTMLLoaded _html)exitWith{_html ctrlEnable true;_html ctrlShow true;};
 		
@@ -1235,7 +1236,7 @@ FN_SHOW_LOG = {
 		if(_value == 0)then{_value = 0.0001;};
 		_minutes = round(_value * 60);
 		_ctrl = _display displayCtrl 2;
-		_ctrl ctrlSetText format['Players loaded in: %1 of %2               TacticalGaming.net   Admin Menu   SERVER UP FOR: %3h %4min               %5',count playableUnits,((playersNumber west)+(playersNumber east)+(playersNumber civilian)+(playersNumber resistance)),_hours,_minutes,INFISTARVERSION];
+		_ctrl ctrlSetText format['Players loaded in: %1 of %2               infiSTAR.de   Admin Menu   SERVER UP FOR: %3h %4min               %5',count playableUnits,((playersNumber west)+(playersNumber east)+(playersNumber civilian)+(playersNumber resistance)),_hours,_minutes,INFISTARVERSION];
 		
 		_btnMainMenu = _display displayCtrl 20;
 		_btnMainMenu buttonSetAction 'FILLMAINSTATE=0;[] call fnc_fill_infiSTAR_MAIN;[] call fnc_setFocus;[] call fnc_colorButtons;';
@@ -1928,13 +1929,12 @@ FN_SHOW_LOG = {
 		_click = lbtext[RIGHT_CTRL_ID,(lbCurSel RIGHT_CTRL_ID)];
 		if(!isNil'VIRTUAL_ITEMSTHREAD')then{terminate VIRTUAL_ITEMSTHREAD;VIRTUAL_ITEMSTHREAD=nil;};
 		if(_click == '')exitWith{};
-		if(_click in AH_HackLogArray)exitWith{_click call FN_SHOW_LOG;diag_log _click;};
-		if(_click in AH_SurvLogArray)exitWith{_click call FN_SHOW_LOG;diag_log _click;};
-		if(_click in AH_AdmiLogArray)exitWith{_click call FN_SHOW_LOG;diag_log _click;};
+		if(_click in AH_HackLogArray)exitWith{systemchat _click;hint _click;diag_log _click;};
+		if(_click in AH_SurvLogArray)exitWith{systemchat _click;hint _click;diag_log _click;};
+		if(_click in AH_AdmiLogArray)exitWith{systemchat _click;hint _click;diag_log _click;};
 		if(_click in PVAH_AHTMPBAN)exitWith{
 			[-667,player,_click] call fnc_AdminReq;
-			_log = format['Removed  %1  from TempBan Variable. Might still be banned in ban(s).txt',_click];
-			_log call FN_SHOW_LOG;
+			systemchat format['Removed  %1  from TempBan Variable. Might still be banned in ban(s).txt',_click];
 			[] call fnc_fill_HackLog;[] call fnc_setFocus;
 		};
 		if(_click in infiSTAR_Toggleable)then
@@ -1971,15 +1971,13 @@ FN_SHOW_LOG = {
 			{
 				lbSetColor [RIGHT_CTRL_ID,1,[1,0,0,1]];
 				infiSTAR_toggled_A = infiSTAR_toggled_A - [_click];
-				_log = format['%1 - 0',_click];
-				_log call fnc_adminLog;
+				format['%1 - 0',_click] call fnc_adminLog;
 			}
 			else
 			{
 				lbSetColor [RIGHT_CTRL_ID,1,[0,1,0,1]];
 				infiSTAR_toggled_A pushBack _click;
-				_log = format['%1 - 1',_click];
-				_log call fnc_adminLog;
+				format['%1 - 1',_click] call fnc_adminLog;
 			};
 		};
 		if(_click in infiSTAR_OnTarget)then
@@ -1988,8 +1986,7 @@ FN_SHOW_LOG = {
 			_uid = '';
 			if(_target == '')then
 			{
-				_log = 'You did not select a Target!';
-				_log call FN_SHOW_LOG;
+				hint 'You did not select a Target!';
 			}
 			else
 			{
@@ -2066,24 +2063,24 @@ FN_SHOW_LOG = {
 		if(_click in infiSTAR_AltisLifeMoney)then
 		{
 			switch (_click) do {
-				case '50K Cash':{['cash',50000] call fnc_Altislife_money;};
-				case '100K Cash':{['cash',100000] call fnc_Altislife_money;};
-				case '250K Cash':{['cash',250000] call fnc_Altislife_money;};
-				case '500K Cash':{['cash',500000] call fnc_Altislife_money;};
-				case '750K Cash':{['cash',750000] call fnc_Altislife_money;};
-				case '1.150K Cash':{['cash',1150000] call fnc_Altislife_money;};
-				case '2.500K Cash':{['cash',2500000] call fnc_Altislife_money;};
-				case '5.000K Cash':{['cash',5000000] call fnc_Altislife_money;};
-				case '10.000K Cash':{['cash',10000000] call fnc_Altislife_money;};
-				case '50K Bank':{['bank',50000] call fnc_Altislife_money;};
-				case '100K Bank':{['bank',100000] call fnc_Altislife_money;};
-				case '250K Bank':{['bank',250000] call fnc_Altislife_money;};
-				case '500K Bank':{['bank',500000] call fnc_Altislife_money;};
-				case '750K Bank':{['bank',750000] call fnc_Altislife_money;};
-				case '1.150K Bank':{['bank',1150000] call fnc_Altislife_money;};
-				case '2.500K Bank':{['bank',2500000] call fnc_Altislife_money;};
-				case '5.000K Bank':{['bank',5000000] call fnc_Altislife_money;};
-				case '10.000K Bank':{['bank',10000000] call fnc_Altislife_money;};
+				case '50K Cash':{['cash',50000] call fnc_Altislife_cash;};
+				case '100K Cash':{['cash',100000] call fnc_Altislife_cash;};
+				case '250K Cash':{['cash',250000] call fnc_Altislife_cash;};
+				case '500K Cash':{['cash',500000] call fnc_Altislife_cash;};
+				case '750K Cash':{['cash',750000] call fnc_Altislife_cash;};
+				case '1.150K Cash':{['cash',1150000] call fnc_Altislife_cash;};
+				case '2.500K Cash':{['cash',2500000] call fnc_Altislife_cash;};
+				case '5.000K Cash':{['cash',5000000] call fnc_Altislife_cash;};
+				case '10.000K Cash':{['cash',10000000] call fnc_Altislife_cash;};
+				case '50K Bank':{['bank',50000] call fnc_Altislife_cash;};
+				case '100K Bank':{['bank',100000] call fnc_Altislife_cash;};
+				case '250K Bank':{['bank',250000] call fnc_Altislife_cash;};
+				case '500K Bank':{['bank',500000] call fnc_Altislife_cash;};
+				case '750K Bank':{['bank',750000] call fnc_Altislife_cash;};
+				case '1.150K Bank':{['bank',1150000] call fnc_Altislife_cash;};
+				case '2.500K Bank':{['bank',2500000] call fnc_Altislife_cash;};
+				case '5.000K Bank':{['bank',5000000] call fnc_Altislife_cash;};
+				case '10.000K Bank':{['bank',10000000] call fnc_Altislife_cash;};
 			};
 			_click call fnc_adminLog;
 		};
@@ -2132,18 +2129,21 @@ FN_SHOW_LOG = {
 				if((EPOCH_VehicleSlotCount == 0)&&((_class isKindOf 'Air' || _class isKindOf 'Ship' || _class isKindOf 'LandVehicle')))then
 				{
 					_log = format['no vehicle slots left to save %1 in the database (destroy/delete a vehicle to get a slot!)',_click];
-					_log call FN_SHOW_LOG;
+					cutText [_log, 'PLAIN DOWN'];
+					hint _log;
 					[0,player,_class,_position,_dir] call fnc_AdminReq;
 					_log call fnc_adminLog;
 				}
 				else
 				{
-					_log call FN_SHOW_LOG;
+					cutText [_log, 'PLAIN DOWN'];
+					hint _log;
 					[0,player,_class,_position,_dir] call fnc_AdminReq;
 					format['spawning %1',_click] call fnc_adminLog;
 				};
 			};
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			[0,player,_class,_position,_dir] call fnc_AdminReq;
 			format['spawning %1',_click] call fnc_adminLog;
 		};
@@ -2169,28 +2169,29 @@ FN_SHOW_LOG = {
 					_msg = (ctrlText((findDisplay MAIN_DISPLAY_ID) displayCtrl 65465));
 					if(_msg != '''')then
 					{
-						if(isNil''SELECTED_TARGET_PLAYER'')exitWith{''no selected target'' call FN_SHOW_LOG};
-						if(isNull SELECTED_TARGET_PLAYER)exitWith{''no selected target'' call FN_SHOW_LOG};
-						if!(isPlayer SELECTED_TARGET_PLAYER)exitWith{''no selected target'' call FN_SHOW_LOG};
-						if!(alive SELECTED_TARGET_PLAYER)exitWith{''no selected target'' call FN_SHOW_LOG};
+						if(isNil''SELECTED_TARGET_PLAYER'')exitWith{systemchat ''no selected target''};
+						if(isNull SELECTED_TARGET_PLAYER)exitWith{systemchat ''no selected target''};
+						if!(isPlayer SELECTED_TARGET_PLAYER)exitWith{systemchat ''no selected target''};
+						if!(alive SELECTED_TARGET_PLAYER)exitWith{systemchat ''no selected target''};
 						
 						_arraymsg = toArray _msg;
 						_breakout=false;
 						{if!(_x in [34,48,49,50,51,52,53,54,55,56,57])exitWith{_breakout=true;};} forEach _arraymsg;
-						if(_breakout)exitWith{format[''PLEASE ENTER NUMBERS ONLY - %1'',_msg] call FN_SHOW_LOG;};
+						if(_breakout)exitWith{systemChat format[''PLEASE ENTER NUMBERS ONLY - %1'',_msg];};
 						
 						_value = parseNumber _msg;
 						_value = round _value;
-						if(_value == 0)exitWith{''value is 0'' call FN_SHOW_LOG};
-						if(_value > 999999)exitWith{''value can not be higher than 999999'' call FN_SHOW_LOG};
+						if(_value == 0)exitWith{systemchat ''value is 0''};
+						if(_value > 999999)exitWith{systemchat ''value can not be higher than 999999''};
 						
 						_click = lbtext[RIGHT_CTRL_ID,(lbCurSel RIGHT_CTRL_ID)];
-						if!(_click in VIRTUAL_ITEMS_ARRAY)exitWith{format[''Class -%1- not in VirtualGoods'',_click] call FN_SHOW_LOG;};
+						if!(_click in VIRTUAL_ITEMS_ARRAY)exitWith{systemChat format[''Class -%1- not in VirtualGoods'',_click];};
 						
 						[''[true,''+str _click+'',''+str _value+''] call life_fnc_handleInv;'',SELECTED_TARGET_PLAYER] call admin_d0_target;
 						
 						_log = format[''Added %1 %2s to %3!'',_value,_click,name SELECTED_TARGET_PLAYER];
-						_log call FN_SHOW_LOG;
+						cutText [_log, ''PLAIN DOWN''];
+						hint _log;
 						_log call fnc_adminLog;
 					};
 				'];
@@ -2270,7 +2271,8 @@ FN_SHOW_LOG = {
 			call fnc_redoControlsMoveObj;
 			
 			_log = format['Spawning %1 infront of %2!',_click,name _target];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			format['spawning %1',_click] call fnc_adminLog;
 		};
@@ -2280,7 +2282,8 @@ FN_SHOW_LOG = {
 			_pos = getPosATL _target;
 			
 			_log = format['Spawning %1 on the ground infront of %2!',_click,name _target];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			if(local _target)then{_target addBackpack _class;}else{['player addBackpack '+str _class+';',_target] call admin_d0_target;};
 			format['spawning %1',_click] call fnc_adminLog;
@@ -2291,7 +2294,8 @@ FN_SHOW_LOG = {
 			_pos = getPosATL _target;
 			
 			_log = format['Spawning %1 on the ground infront of %2!',_click,name _target];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			[3,player,_pos,_class] call fnc_AdminReq;
 			format['spawning %1',_click] call fnc_adminLog;
@@ -2302,13 +2306,15 @@ FN_SHOW_LOG = {
 			_target = if(isNull (call fnc_LBSelChanged_LEFT))then{player} else {(call fnc_LBSelChanged_LEFT)};
 			if(!isPlayer _target)exitWith{
 				_log = format['Spawning %1 on the ground infront of %2!',_click,name _target];
-				_log call FN_SHOW_LOG;
+				cutText [_log, 'PLAIN DOWN'];
+				hint _log;
 			};
 			
 			if(fillmainstate == 6)exitWith
 			{
 				_log = format['Spawning %1..',_click];
-				_log call FN_SHOW_LOG;
+				cutText [_log, 'PLAIN DOWN'];
+				hint _log;
 				
 				if(local _target)then
 				{
@@ -2339,7 +2345,8 @@ FN_SHOW_LOG = {
 			
 			_pos = getPosATL _target;
 			_log = format['Spawning %1 on the ground infront of %2!',_click,name _target];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			[3,player,_pos,_class] call fnc_AdminReq;
 		};
 		if(infiSTAR_MOD == 'Epoch')then{[_click] call CCG_fnc_adminClick;};
@@ -2375,7 +2382,7 @@ FN_SHOW_LOG = {
 			_xposT = 0.6;
 			_yposT = 0.375 * safezoneH + safezoneY;
 			_txt = (gettext (configFile >> _cfg >> _class >> 'Library' >> 'libTextDesc'));
-			if(_txt == '')then{_txt = 'by TacticalGaming.net';};
+			if(_txt == '')then{_txt = 'by infiSTAR.de';};
 			
 			if(_cfg=='CfgVehicles')then{
 				_vehicleConfig=configFile>>_cfg>>_class;
@@ -2426,14 +2433,12 @@ FN_SHOW_LOG = {
 			if(!isNull SELECTED_DOUBLECLICK_TARGET)then
 			{
 				createGearDialog [SELECTED_DOUBLECLICK_TARGET,'RscDisplayInventory'];
-				_log = format['Showing Gear of %1',name SELECTED_DOUBLECLICK_TARGET];
-				_log call FN_SHOW_LOG;
+				cutText [format['Showing Gear of %1',name SELECTED_DOUBLECLICK_TARGET], 'PLAIN DOWN'];
 			};
 		};
 	};
 	adminspec = {
-		_log = 'Spectating - Press F10 to exit.';
-		_log call FN_SHOW_LOG;
+		cutText ['Spectating - Press F10 to exit.', 'PLAIN DOWN'];
 		if(isNil 'SpecateLoopActive')then
 		{
 			SpecateLoopActive = true;
@@ -2603,25 +2608,27 @@ FN_SHOW_LOG = {
 			};
 			(vehicle player) switchCamera cameraView;
 			for '_i' from 3025 to 3045 do {['',0,0,1,0,0,_i] spawn bis_fnc_dynamicText;};
-			_log = 'Finished spectating.';
-			_log call FN_SHOW_LOG;
+			cutText ['Finished spectating.', 'PLAIN DOWN'];
 		};
 	};
 	fnc_clearLogArray = {
 		[-668,player,_this select 0] call fnc_AdminReq;
 		_log = 'ingame Log(s) cleared!';
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 		[] call fnc_FULLinit;
 	};
 	fnc_dumpUclientVars = {
 		[-663,player,getPlayerUID (_this select 0),name (_this select 0)] call fnc_AdminReq;
 		_log = format['Dumping unique client variables of %1(%2)',name (_this select 0),getPlayerUID (_this select 0)];
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	fnc_getSteamName = {
 		[9876,player,_this select 0] call fnc_AdminReq;
 		_log = format['Requested Steam Name of %1(%2)',name (_this select 0),getPlayerUID (_this select 0)];
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	fnc_TP2ME = {
 		_unit = _this select 0;
@@ -2654,7 +2661,8 @@ FN_SHOW_LOG = {
 		MoveInParachuteObject = _this select 0;
 		openMap true;
 		_log = format['Click on Map to Parachute %1(%2)',name MoveInParachuteObject,getPlayerUID MoveInParachuteObject];
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 		fnc_getParachutePos = {
 			_parachuteObject = createVehicle ['Steerable_Parachute_F', [_this select 0,_this select 1,300], [], 0, 'CAN_COLLIDE'];
 			_parachuteObject enableSimulationGlobal true;
@@ -2691,7 +2699,8 @@ FN_SHOW_LOG = {
 			[11,player,_target] call fnc_AdminReq;
 			
 			_log = format['Removed Gear of %1!',name _target];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 	};
 	fnc_add_loadout = {
@@ -2951,14 +2960,17 @@ FN_SHOW_LOG = {
 				(unitBackpack _wset) additemCargo ['30Rnd_9x21_Mag', 9];
 				(unitBackpack _wset) additemCargo ['handGrenade', 2];
 			};
-			default { _log = 'no loadout selected';_log call FN_SHOW_LOG; };
+			default { hint 'no loadout selected' };
 		};
 	};
 	fnc_spawn_timemachine = {
 		_offset = _this select 0;
+		
 		[6,player,_offset] call fnc_AdminReq;
+		
 		_log = format['DayTime changed to hour %1',_offset];
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	fnc_mass_message = {
 		disableSerialization;
@@ -2966,15 +2978,19 @@ FN_SHOW_LOG = {
 		if(isNull _display)exitWith
 		{
 			_log = 'open your chat, type a message and start this function again!';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
+			systemchat _log;
 		};
 		_chat = _display displayCtrl 101;
 		_msg = ctrlText _chat;
 		(_display) closeDisplay 0;
 		[7,player,toArray _msg] call fnc_AdminReq;
-		_log = format['Mass Message: %1',_msg];
-		_log call fnc_adminLog;
-		_log call FN_SHOW_LOG;
+		format['Mass Message: %1',_msg] call fnc_adminLog;
+		
+		_log = 'message sent!';
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	fnc_freezeTarget = {
 		_target = _this select 0;
@@ -2982,17 +2998,20 @@ FN_SHOW_LOG = {
 		if(typeName _target != 'OBJECT')exitWith
 		{
 			_log = 'Target is not an Object!';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		if!(isPlayer _target)exitWith
 		{
 			_log = 'Target is not a Player!';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		[13,player,_target,_value] call fnc_AdminReq;
 		_log = format['UnFroze %1!',name _target];
 		if(_value)then{_log = format['Froze %1!',name _target];};
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	fnc_restrainTarget = {
 		_target = _this select 0;
@@ -3000,17 +3019,20 @@ FN_SHOW_LOG = {
 		if(typeName _target != 'OBJECT')exitWith
 		{
 			_log = 'Target is not an Object!';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		if!(isPlayer _target)exitWith
 		{
 			_log = 'Target is not a Player!';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		[15,player,_target,_value] call fnc_AdminReq;
 		_log = format['Unrestrained %1!',name _target];
 		if(_value)then{_log = format['Restrained %1!',name _target];};
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	"; if(_MOD == 'Epoch')then{ infiSTAR_MAIN_CODE = infiSTAR_MAIN_CODE + "
 	fnc_spawn_CryptoINSERTVALUE = {
@@ -3063,7 +3085,8 @@ FN_SHOW_LOG = {
 			{
 				_log = format[''Removed %1 Crypto from %2!'',_value,name SELECTED_TARGET_PLAYER];
 			};
-			_log call FN_SHOW_LOG;
+			cutText [_log, ''PLAIN DOWN''];
+			hint _log;
 		'];
 		
 		if(!isNil'fnc_spawn_CryptoINSERTVALUETHREAD')then{terminate fnc_spawn_CryptoINSERTVALUETHREAD;};
@@ -3109,9 +3132,10 @@ FN_SHOW_LOG = {
 		_pos = _target modelToWorld [0,3,0];
 		[5000,player,_select,_pos] call fnc_AdminReq;
 		_log = format['Spawning Box %1 on the ground infront of %2!',_select,name _target];
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
-	fnc_Altislife_money = {
+	fnc_Altislife_cash = {
 		_state = _this select 0;
 		_amount = _this select 1;
 		if(typeName _state != 'STRING')exitWith{};
@@ -3120,14 +3144,12 @@ FN_SHOW_LOG = {
 		if(_state == 'cash')then
 		{
 			life_cash = life_cash + _amount;
-			_log = format['Cash %1K - %2K has been added.',life_cash/1000,_amount/1000];
-			_log call FN_SHOW_LOG;
+			systemChat format['Cash %1K - %2K has been added.',life_cash/1000,_amount/1000];
 		};
 		if(_state == 'bank')then
 		{
 			life_atmcash = life_atmcash + _amount;
-			_log = format['Bank %1K - %2K has been added.',life_atmcash/1000,_amount/1000];
-			_log call FN_SHOW_LOG;
+			systemChat format['Bank %1K - %2K has been added.',life_atmcash/1000,_amount/1000];
 		};
 	};
 	admin_showinfo = {
@@ -3145,7 +3167,7 @@ FN_SHOW_LOG = {
 			};
 			
 			{
-				_x call FN_SHOW_LOG;
+				systemChat _x;
 				diag_log _x;
 			} forEach
 			[
@@ -3168,7 +3190,7 @@ FN_SHOW_LOG = {
 							_log2 = format['Owner %1(%2) - %3m far away',name _x,_owner,floor(_obj distance _x)];
 						};
 					} forEach playableUnits;
-					_log2 call FN_SHOW_LOG;
+					systemChat _log2;
 					diag_log _log2;
 				};
 			};
@@ -3205,7 +3227,8 @@ FN_SHOW_LOG = {
 			};
 			
 			_log = 'Vehicle God Mode - Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
@@ -3213,21 +3236,24 @@ FN_SHOW_LOG = {
 			{_x removeAllEventhandlers 'HandleDamage';_x allowDamage true;} forEach MY_VEHICLES;
 			
 			_log = 'Vehicle God Mode - Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 	};
 	fnc_LowerTerrain = {
 		if(isNil 'admin_terrain')then{admin_terrain = true;} else {admin_terrain = !admin_terrain};
 		if(admin_terrain)then{
 			setTerrainGrid 50;
-			_log = 'Terrain Low';
-			_log call FN_SHOW_LOG;
+			_txt = 'Terrain Low';
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
 		}
 		else
 		{
 			setTerrainGrid 25;
-			_log = 'Terrain Normal';
-			_log call FN_SHOW_LOG;
+			_txt = 'Terrain Normal';
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
 		};
 	};
 	fnc_infiSTAR_A3UnlAmmo = {
@@ -3236,13 +3262,15 @@ FN_SHOW_LOG = {
 		{
 			unlimAmmRun=1;
 			_log = 'Unlimited Ammo ON';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
 			unlimAmmRun=0;
 			_log = 'Unlimited Ammo OFF';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		while {unlimAmmRun==1} do 
 		{
@@ -3261,13 +3289,15 @@ FN_SHOW_LOG = {
 		{
 			noRecoilRun=1;
 			_log = 'No Recoil ON';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
 			noRecoilRun=0;
 			_log = 'No Recoil OFF';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		while {noRecoilRun==1} do 
 		{
@@ -3287,13 +3317,15 @@ FN_SHOW_LOG = {
 		{
 			A3FFrun=1;
 			_log = 'FastFire ON';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
 			A3FFrun=0;
 			_log = 'FastFire OFF';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 		while {A3FFrun==1} do
 		{
@@ -3313,7 +3345,8 @@ FN_SHOW_LOG = {
 			[2,player,A3HIDErun] call fnc_AdminReq;
 			
 			_log = 'Stealth / Invisible ON';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
@@ -3321,7 +3354,8 @@ FN_SHOW_LOG = {
 			[2,player,A3HIDErun] call fnc_AdminReq;
 			
 			_log = 'Stealth / Invisible OFF';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 	};
 	fnc_DisableAnnouncements = {
@@ -3332,7 +3366,8 @@ FN_SHOW_LOG = {
 			AdminAnnounceDisabled = true;
 			
 			_log = 'Disable Announces - ON';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
@@ -3340,7 +3375,8 @@ FN_SHOW_LOG = {
 			AdminAnnounceDisabled = nil;
 			
 			_log = 'Disable Announces - OFF';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 	};
 	fnc_FreeRoamCam = {
@@ -3355,8 +3391,7 @@ FN_SHOW_LOG = {
 			freeFlightCam camCommand 'INERTIA OFF';
 			freeFlightCam cameraEffect['INTERNAL', 'BACK'];
 			showCinemaBorder false;
-			_log = 'Right Click To Cancel!';
-			_log call FN_SHOW_LOG;
+			cutText['Right Click To Cancel!', 'PLAIN DOWN', 1];
 		}
 		else
 		{
@@ -3383,16 +3418,17 @@ FN_SHOW_LOG = {
 				_displayName = gettext (configFile >> 'CfgVehicles' >> _type >> 'displayName');
 				_distance = round(cameraOn distance _delete);
 				
-				_log = format['DELETE:   %1 (%2)   distance %3m?  (press continue and delete again)',_displayName,_type,_distance];
-				_log call FN_SHOW_LOG;
+				_txt = format['DELETE:   %1 (%2)   distance %3m?  (press continue and delete again)',_displayName,_type,_distance];
+				hint _txt;
 				DELETE_TARGET = _delete;
 			};
 			
 			if(isNil 'ToDeleteArray')then{ToDeleteArray = [];};
 			if(_delete in ToDeleteArray)then
 			{
-				_log = format['%1 - IN DELETE QUEUE',_delete];
-				_log call FN_SHOW_LOG;
+				_txt = format['%1 - IN DELETE QUEUE',_delete];
+				hint _txt;
+				cutText [_txt, 'PLAIN DOWN'];
 			}
 			else
 			{
@@ -3407,13 +3443,16 @@ FN_SHOW_LOG = {
 					[-4,player,_delete] call fnc_AdminReq;
 				};
 				
-				_log = format['Deleting %1 @%2..',typeOf _delete,mapGridPosition _delete];
+				_txt = format['Deleting %1 @%2..',typeOf _delete,mapGridPosition _delete];
 				if(getPlayerUID _target != '')then
 				{
-					_log = format['Deleting %1(%2) vehicle: %3 @%4..',name _target,getPlayerUID _target,typeOf _delete,mapGridPosition _delete];
+					_txt = format['Deleting %1(%2) vehicle: %3 @%4..',name _target,getPlayerUID _target,typeOf _delete,mapGridPosition _delete];
 				};
-				_log call FN_SHOW_LOG;
-				_log call fnc_adminLog;
+				hint _txt;
+				cutText [_txt, 'PLAIN DOWN'];
+				systemchat _txt;
+				diag_log _txt;
+				_txt call fnc_adminLog;
 			};
 		}
 		else
@@ -3445,7 +3484,7 @@ FN_SHOW_LOG = {
 				};
 			};
 		} catch {
-			_exception call FN_SHOW_LOG;
+			systemChat _exception;
 			call fnc_FULLinit;
 		};
 	};
@@ -3509,13 +3548,13 @@ FN_SHOW_LOG = {
 		if(isNil 'CCGbdRadius')then{throw 'BASEDELETER: Radius not set!';};
 		_objects = call CCG_fnc_bdGetObjectsToDelete;
 		_objects spawn {
-			format['BASEDELETER: Deleting %1 objects. Please Wait...', count _this] call FN_SHOW_LOG;
+			systemChat format['BASEDELETER: Deleting %1 objects. Please Wait...', count _this];
 			{
-				format['BASEDELETER: Deleting %1 (%2/%3)', typeOf _x, _foreachindex + 1, count _this] call FN_SHOW_LOG;
+				systemChat format['BASEDELETER: Deleting %1 (%2/%3)', typeOf _x, _foreachindex + 1, count _this];
 				[-4,player,_x] call fnc_AdminReq;
 				uiSleep 0.1;
 			} foreach _this;
-			format['BASEDELETER: Deleting complete.', count _this] call FN_SHOW_LOG;
+			systemChat format['BASEDELETER: Deleting complete.', count _this];
 		};
 		call CCG_fnc_bdCancel;
 	};
@@ -3545,20 +3584,22 @@ FN_SHOW_LOG = {
 				[-3,player,_target] call fnc_AdminReq;
 			};
 			
-			_log = format['Flipping %1 @%2..',typeOf _veh,mapGridPosition _target];
-			_log call FN_SHOW_LOG;
+			_txt = format['Flipping %1 @%2..',typeOf _veh,mapGridPosition _target];
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
 		}
 		else
 		{
-			_log = 'invalid target';
-			if((!alive _target) && {_target isKindOf 'Landvehicle' || _target isKindOf 'Air' || _target isKindOf 'Ship'})then{_log = 'vehicle destroyed..';};
-			_log call FN_SHOW_LOG;
+			_txt = 'invalid target';
+			if((!alive _target) && {_target isKindOf 'Landvehicle' || _target isKindOf 'Air' || _target isKindOf 'Ship'})then{_txt = 'vehicle destroyed..';};
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
 		};
 	};
 	zeus_attack = {
 		_target = _this select 0;
 		_pos = screenToWorld [0.5,0.5];
-		_log = format['Zeus @%1',mapGridPosition _pos];
+		_txt = format['Zeus @%1',mapGridPosition _pos];
 		if(typeName _target != 'OBJECT')then
 		{
 			_target = cursorTarget;
@@ -3567,14 +3608,15 @@ FN_SHOW_LOG = {
 		{
 			_pos = getPos _target;
 			
-			_log = format['Zeus %1 @%2',typeOf _target,mapGridPosition _pos];
+			_txt = format['Zeus %1 @%2',typeOf _target,mapGridPosition _pos];
 			if(getPlayerUID _target != '')then
 			{
-				_log = format['Zeus %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _pos];
+				_txt = format['Zeus %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _pos];
 			};
 		};
-		_log call FN_SHOW_LOG;
-		_log call fnc_adminLog;
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
+		_txt call fnc_adminLog;
 		[-1,player,_pos] call fnc_AdminReq;
 	};
 	fnc_Kill_selected = {
@@ -3587,25 +3629,27 @@ FN_SHOW_LOG = {
 		{
 			if(alive _target)then
 			{
-				_log = format['Killing %1 @%2',typeOf _target,mapGridPosition _target];
+				_txt = format['Killing %1 @%2',typeOf _target,mapGridPosition _target];
 				if(getPlayerUID _target != '')then
 				{
-					_log = format['Killing %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
+					_txt = format['Killing %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
 				};
-				_log call FN_SHOW_LOG;
-				_log call fnc_adminLog;
+				hint _txt;
+				cutText [_txt, 'PLAIN DOWN'];
+				
+				_txt call fnc_adminLog;
 				[-2,player,_target] call fnc_AdminReq;
 			}
 			else
 			{
-				_log = 'target is dead';
-				_log call FN_SHOW_LOG;
+				hint 'target is dead';
+				cutText ['target is dead', 'PLAIN'];
 			};
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_createMinefield = {
@@ -3615,18 +3659,19 @@ FN_SHOW_LOG = {
 			_target = cursorTarget;
 		};
 		_pos = screenToWorld [0.5,0.5];
-		_log = format['MineField (around target) @%1',mapGridPosition _pos];
+		_txt = format['MineField (around target) @%1',mapGridPosition _pos];
 		if(!isNull _target)then
 		{
-			_log = format['MineField (around target) %1 @%2',typeOf _target,mapGridPosition _target];
+			_txt = format['MineField (around target) %1 @%2',typeOf _target,mapGridPosition _target];
 			if(isPlayer _target)then
 			{
-				_log = format['MineField (around target) %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
+				_txt = format['MineField (around target) %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
 			};
 			_pos = ATLtoASL (_target modelToWorldVisual [0,0,0]);
 		};
-		_log call FN_SHOW_LOG;
-		_log call fnc_adminLog;
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
+		_txt call fnc_adminLog;
 		
 		_mineFields =
 		[
@@ -3651,21 +3696,23 @@ FN_SHOW_LOG = {
 			_target = cursorTarget;
 		};
 		_pos = screenToWorld [0.5,0.5];
-		_log = format['Exploding @%1',mapGridPosition _pos];
+		_txt = format['Exploding @%1',mapGridPosition _pos];
 		if(!isNull _target)then
 		{
-			_log = format['Exploding %1 @%2',typeOf _target,mapGridPosition _target];
+			_txt = format['Exploding %1 @%2',typeOf _target,mapGridPosition _target];
 			if(isPlayer _target)then
 			{
-				_log = format['Exploding %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
+				_txt = format['Exploding %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
 			};
 			
 			_eyepos = ASLToATL eyepos _target;if(surfaceIsWater _eyepos)then{_eyepos = eyepos _target;};
 			_pos = getPosVisual _target;
 			_pos set[2,_eyepos select 2];
 		};
-		_log call FN_SHOW_LOG;
-		_log call fnc_adminLog;
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
+		_txt call fnc_adminLog;
+		
 		_bomb = 'HelicopterExploSmall' createVehicleLocal _pos;
 	};
 	fnc_Disconnect_selected = {
@@ -3676,14 +3723,15 @@ FN_SHOW_LOG = {
 			if(_TUID != '')then
 			{
 				[-664,player,_TUID] call fnc_AdminReq;	
-				_log = format['Disconnect %1(%2)',name _target,_TUID];
-				_log call FN_SHOW_LOG;
+				_txt = format['Disconnect %1(%2)',name _target,_TUID];
+				hint _txt;
+				cutText [_txt, 'PLAIN DOWN'];
 			};
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_Kick_selected = {
@@ -3702,14 +3750,15 @@ FN_SHOW_LOG = {
 					[7,player,toArray _msg] call fnc_AdminReq;
 				};
 				
-				_log = format['Kicking %1(%2)',_TNAME,_TUID];
-				_log call FN_SHOW_LOG;
+				_txt = format['Kicking %1(%2)',_TNAME,_TUID];
+				hint _txt;
+				cutText [_txt, 'PLAIN DOWN'];
 			};
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_Ban_selected = {
@@ -3728,14 +3777,15 @@ FN_SHOW_LOG = {
 					[7,player,toArray _msg] call fnc_AdminReq;
 				};
 				
-				_log = format['Ban %1(%2)',_TNAME,_TUID];
-				_log call FN_SHOW_LOG;
+				_txt = format['Ban %1(%2)',_TNAME,_TUID];
+				hint _txt;
+				cutText [_txt, 'PLAIN DOWN'];
 			};
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_ATTACH_TO = {
@@ -3767,12 +3817,13 @@ FN_SHOW_LOG = {
 			LastAttachedObject = _target;
 			
 			_log = format['Attaching   %1   to player',typeOf _target];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_spawn_EVENT = {
@@ -3780,8 +3831,9 @@ FN_SHOW_LOG = {
 		_EVENT = _this select 1;
 		
 		if(infiSTAR_MOD != 'Epoch')exitWith{
-			_log = 'Epoch Only!';
-			_log call FN_SHOW_LOG;
+			_txt = 'Epoch Only!';
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
 		};
 		
 		if(!isNull _target)then
@@ -3789,12 +3841,13 @@ FN_SHOW_LOG = {
 			[4,player,_target,_EVENT] call fnc_AdminReq;
 			
 			_log = format['%1..',_EVENT];
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_ReviveTarget = {
@@ -3805,23 +3858,17 @@ FN_SHOW_LOG = {
 		};
 		if(isNull _target)exitWith
 		{
-			_log = 'Can not revive: target does not exist!';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
-		if!(isPlayer _target)exitWith
+		_txt = format['Revived %1 @%2',typeOf _target,mapGridPosition _target];
+		if(getPlayerUID _target != '')then
 		{
-			_log = 'Can not revive: target not a player!';
-			_log call FN_SHOW_LOG;
+			_txt = format['Revived %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
 		};
-		if((getPlayerUID _target) isEqualTo '')exitWith
-		{
-			_log = 'Can not revive: player left target body already..!';
-			_log call FN_SHOW_LOG;
-		};
-		_log = format['Revived %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
-		_log call FN_SHOW_LOG;
-
-
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
+		
 		closeDialog 0;
 		if(infiSTAR_MOD == 'AltisLife')then
 		{
@@ -3841,18 +3888,20 @@ FN_SHOW_LOG = {
 		};
 		if(!isNull _target)then
 		{
-			_log = format['Healed %1 @%2',typeOf _target,mapGridPosition _target];
+			_txt = format['Healed %1 @%2',typeOf _target,mapGridPosition _target];
 			if(getPlayerUID _target != '')then
 			{
-				_log = format['Healed %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
+				_txt = format['Healed %1(%2) @%3',name _target,getPlayerUID _target,mapGridPosition _target];
 			};
-			_log call FN_SHOW_LOG;
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
+			
 			[9,player,_target] call fnc_AdminReq;
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	fnc_RepairTarget = {
@@ -3863,20 +3912,21 @@ FN_SHOW_LOG = {
 		};
 		if(!isNull _target)then
 		{
-			_log = format['%1 @%2 - Repaired & Refueled',typeOf _target,mapGridPosition _target];
+			_txt = format['%1 @%2 - Repaired & Refueled',typeOf _target,mapGridPosition _target];
 			if(getPlayerUID _target != '')then
 			{
-				_log = format['%1 @%2 - Repaired & Refueled   @%3',name _target,getPlayerUID _target,mapGridPosition _target];
+				_txt = format['%1 @%2 - Repaired & Refueled   @%3',name _target,getPlayerUID _target,mapGridPosition _target];
 			};
-			_log call FN_SHOW_LOG;
+			hint _txt;
+			cutText [_txt, 'PLAIN DOWN'];
 			
 			[9,player,vehicle _target] call fnc_AdminReq;
 			(vehicle _target) setFuel 1;
 		}
 		else
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 	};
 	infiSTAR_A3Heal = {
@@ -3885,8 +3935,9 @@ FN_SHOW_LOG = {
 			setPlayerRespawnTime 5;
 		};
 		[9,player,cameraOn] call fnc_AdminReq;
-		_log = format['Healed: %1',name cameraOn];
-		_log call FN_SHOW_LOG;
+		_txt = format['Healed: %1',name cameraOn];
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
 	};
 	infiSTAR_A3RestoreNear = {
 		if(!isNil 'life_cash')then{life_thirst = 100;life_hunger = 100;};
@@ -3905,8 +3956,9 @@ FN_SHOW_LOG = {
 			} forEach _crewandobject;
 		} forEach (cameraOn nearEntities ['AllVehicles',15]);
 		
-		_log = 'Restored Near';
-		_log call FN_SHOW_LOG;
+		_txt = 'Restored Near';
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
 	};
 	infiSTAR_A3Togglelock = {
 		private ['_veh'];
@@ -3918,13 +3970,13 @@ FN_SHOW_LOG = {
 		};
 		if(isNull _veh)exitWith
 		{
-			_log = 'target does not exist';
-			_log call FN_SHOW_LOG;
+			hint 'target does not exist';
+			cutText ['target does not exist', 'PLAIN'];
 		};
 		if(!alive _veh)exitWith
 		{
-			_log = 'target is destroyed ';
-			_log call FN_SHOW_LOG;
+			hint 'target is destroyed ';
+			cutText ['target is destroyed ', 'PLAIN'];
 		};
 		if(_veh isKindOf 'AllVehicles')exitWith{
 			if((player distance _veh < 12) || ((_veh == vehicle player) && (vehicle player != player)))then
@@ -3943,9 +3995,10 @@ FN_SHOW_LOG = {
 						_veh lock false;
 						[10,player,_veh,false] call fnc_AdminReq;
 					};
-					_log = format['unlocked - [%1]',typeOf _veh];
-					_log call FN_SHOW_LOG;
-					_log call fnc_adminLog;
+					_txt = format['unlocked - [%1]',typeOf _veh];
+					hint _txt;
+					cutText [_txt, 'PLAIN DOWN'];
+					_txt call fnc_adminLog;
 				}
 				else
 				{
@@ -3960,9 +4013,10 @@ FN_SHOW_LOG = {
 						_veh lock true;
 						[10,player,_veh,true] call fnc_AdminReq;
 					};
-					_log = format['locked - [%1]',typeOf _veh];
-					_log call FN_SHOW_LOG;
-					_log call fnc_adminLog;
+					_txt = format['locked - [%1]',typeOf _veh];
+					hint _txt;
+					cutText [_txt, 'PLAIN DOWN'];
+					_txt call fnc_adminLog;
 				};
 			};
 		};
@@ -3982,12 +4036,13 @@ FN_SHOW_LOG = {
 			{
 				[14,player,[_object,player,Epoch_personalToken]] call fnc_AdminReq;
 				_log = format['Upgraded   %1',typeOf _object];
+				cutText [_log, 'PLAIN DOWN'];
 				_log call fnc_adminLog;
 			}
 			else
 			{
 				_log = format['Can not Upgrade typeOf building   %1',typeOf _object];
-				_log call fnc_adminLog;
+				cutText [_log, 'PLAIN DOWN'];
 			};
 		};
 	};
@@ -3995,7 +4050,7 @@ FN_SHOW_LOG = {
 		if(isNil'SELECTED_TARGET_PLAYER')then{SELECTED_TARGET_PLAYER=player;};
 		if(isNull SELECTED_TARGET_PLAYER)then{SELECTED_TARGET_PLAYER=player;};
 		if(!alive SELECTED_TARGET_PLAYER)then{SELECTED_TARGET_PLAYER=player;};
-		_log = '';
+		_txt = '';
 		_veh = vehicle SELECTED_TARGET_PLAYER;
 		if(_veh == SELECTED_TARGET_PLAYER)then 
 		{
@@ -4030,11 +4085,12 @@ FN_SHOW_LOG = {
 		}
 		else
 		{
-			_log = format['%1 added Ammo to %2',profileName,typeOf _veh];
+			_txt = format['%1 added Ammo to %2',profileName,typeOf _veh];
 			{_wep = _x;{_veh addmagazine _x;} forEach (getArray (configFile >> 'CfgWeapons' >> _wep >> 'magazines'));} forEach (weapons _veh);
 		};
-		_log call FN_SHOW_LOG;
-		_log call fnc_adminLog;
+		hint _txt;
+		cutText [_txt, 'PLAIN DOWN'];
+		_txt call fnc_adminLog;
 	};
 	infiSTAR_A3Invulnerability = {
 		fnc_A3_stopGod =
@@ -4106,8 +4162,8 @@ FN_SHOW_LOG = {
 				};
 				call fnc_A3_stopGod;
 			};
-			_log = 'God Mode Enabled';
-			_log call FN_SHOW_LOG;
+			cutText ['God Mode Enabled', 'PLAIN'];
+			hint 'God Mode Enabled';
 		}
 		else
 		{
@@ -4115,8 +4171,8 @@ FN_SHOW_LOG = {
 			call fnc_A3_stopGod;
 			terminate infiSTAR_A3InvulnerabilityLoop;
 			call fnc_A3_stopGod;
-			_log = 'God Mode Disabled';
-			_log call FN_SHOW_LOG;
+			cutText ['God Mode Disabled', 'PLAIN'];
+			hint 'God Mode Disabled';
 		};
 	};
 	fnc_Epochs_ESP = {
@@ -4457,57 +4513,57 @@ FN_SHOW_LOG = {
 	};
 	infiSTAR_fnc_infiESP_player1 = {
 		if(isNil 'fnc_infiESP_statePlayer1')then{
-			fnc_infiESP_statePlayer1 = 1;_log = 'infiSTAR Player ESP 1 - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_statePlayer1 = 1;_log = 'infiSTAR Player ESP 1 - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_statePlayer1 = nil;_log = 'infiSTAR Player ESP 1 - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_statePlayer1 = nil;_log = 'infiSTAR Player ESP 1 - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
 	infiSTAR_fnc_infiESP_player2 = {
 		if(isNil 'fnc_infiESP_statePlayer2')then{
-			fnc_infiESP_statePlayer2 = 1;_log = 'infiSTAR Player ESP 2 - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_statePlayer2 = 1;_log = 'infiSTAR Player ESP 2 - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_statePlayer2 = nil;_log = 'infiSTAR Player ESP 2 - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_statePlayer2 = nil;_log = 'infiSTAR Player ESP 2 - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
 	infiSTAR_fnc_infiESP_AI = {
 		if(isNil 'fnc_infiESP_stateAI')then{
-			fnc_infiESP_stateAI = 1;_log = 'infiSTAR AI ESP - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateAI = 1;_log = 'infiSTAR AI ESP - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_stateAI = nil;_log = 'infiSTAR AI ESP - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateAI = nil;_log = 'infiSTAR AI ESP - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
 	infiSTAR_fnc_infiESP_DEAD = {
 		if(isNil 'fnc_infiESP_stateDEAD')then{
-			fnc_infiESP_stateDEAD = 1;_log = 'infiSTAR DEAD ESP - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateDEAD = 1;_log = 'infiSTAR DEAD ESP - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_stateDEAD = nil;_log = 'infiSTAR DEAD ESP - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateDEAD = nil;_log = 'infiSTAR DEAD ESP - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
 	infiSTAR_fnc_infiESP_LOCKBOX = {
 		if(isNil 'fnc_infiESP_stateLOCKBOX')then{
-			fnc_infiESP_stateLOCKBOX = 1;_log = 'infiSTAR LockBox ESP - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateLOCKBOX = 1;_log = 'infiSTAR LockBox ESP - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_stateLOCKBOX = nil;_log = 'infiSTAR LockBox ESP - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateLOCKBOX = nil;_log = 'infiSTAR LockBox ESP - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
 	infiSTAR_fnc_infiESP_SHELF = {
 		if(isNil 'fnc_infiESP_stateSHELF')then{
-			fnc_infiESP_stateSHELF = 1;_log = 'infiSTAR Shelf ESP - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateSHELF = 1;_log = 'infiSTAR Shelf ESP - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_stateSHELF = nil;_log = 'infiSTAR Shelf ESP - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_stateSHELF = nil;_log = 'infiSTAR Shelf ESP - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
 	infiSTAR_fnc_infiESP_PLOTPOLE = {
 		if(isNil 'fnc_infiESP_statePLOTPOLE')then{
-			fnc_infiESP_statePLOTPOLE = 1;_log = 'infiSTAR PlotPole ESP - ON (ESP DECREASES FPS A LOT!)';_log call FN_SHOW_LOG;
+			fnc_infiESP_statePLOTPOLE = 1;_log = 'infiSTAR PlotPole ESP - ON (ESP DECREASES FPS A LOT!)';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		} else {
-			fnc_infiESP_statePLOTPOLE = nil;_log = 'infiSTAR PlotPole ESP - OFF';_log call FN_SHOW_LOG;
+			fnc_infiESP_statePLOTPOLE = nil;_log = 'infiSTAR PlotPole ESP - OFF';hint _log;cutText [format[_log], 'PLAIN DOWN'];
 		};
 		call fnc_call_single_esps;
 	};
@@ -4694,7 +4750,8 @@ FN_SHOW_LOG = {
 		if(isNil 'MAP_BUTTON_THREAD')then
 		{
 			_log = 'MapIcons Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			if(isNil'mapiconsshowplayer')then{mapiconsshowplayer=true;};
 			if(isNil'mapiconsshowvehicles')then{mapiconsshowvehicles=false;};
@@ -4753,7 +4810,8 @@ FN_SHOW_LOG = {
 		else 
 		{
 			_log = 'MapIcons Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			terminate MAP_BUTTON_THREAD;MAP_BUTTON_THREAD=nil;
 			if(!isNil'EventHandlerDrawAdded')then{(uiNamespace getVariable 'A3MAPICONS_mainMap') ctrlRemoveEventHandler ['Draw',EventHandlerDrawAdded];EventHandlerDrawAdded=nil;};
@@ -4792,7 +4850,8 @@ FN_SHOW_LOG = {
 		if(markadVehicleMarker == 0)then
 		{
 			_log = '2D Map VehicleMarkerMarker Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadVehicleMarker = 1;
 			[] spawn adminVehicleMarkers;
@@ -4800,7 +4859,8 @@ FN_SHOW_LOG = {
 		else
 		{
 			_log = '2D Map VehicleMarkerMarker Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadVehicleMarker = 0;
 			for '_i' from 0 to 99999 do {deleteMarkerLocal ('adminVehicleMarkers' + (str _i));};
@@ -4856,7 +4916,8 @@ FN_SHOW_LOG = {
 		if(markadPlotPole == 0)then
 		{
 			_log = '2D Map PlotPoleMarker Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadPlotPole = 1;
 			[] spawn adminPlotPoles;
@@ -4864,7 +4925,8 @@ FN_SHOW_LOG = {
 		else
 		{
 			_log = '2D Map PlotPoleMarker Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadPlotPole = 0;
 			for '_i' from 0 to 99999 do {deleteMarkerLocal ('adminPlotPoles' + (str _i));deleteMarkerLocal ('adminPlotPoles' + (str (_i+30000)));};
@@ -4902,7 +4964,8 @@ FN_SHOW_LOG = {
 		if(markadConstructions == 0)then
 		{
 			_log = '2D Map ConstructionsMarker Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadConstructions = 1;
 			[] spawn adminConstructionss;
@@ -4910,7 +4973,8 @@ FN_SHOW_LOG = {
 		else
 		{
 			_log = '2D Map ConstructionsMarker Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadConstructions = 0;
 			for '_i' from 0 to 99999 do {deleteMarkerLocal ('adminConstructionss' + (str _i));};
@@ -4948,7 +5012,8 @@ FN_SHOW_LOG = {
 		if(markadLockBox == 0)then
 		{
 			_log = '2D Map LockBoxMarker Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadLockBox = 1;
 			[] spawn adminLockBoxs;
@@ -4956,7 +5021,8 @@ FN_SHOW_LOG = {
 		else
 		{
 			_log = '2D Map LockBoxMarker Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadLockBox = 0;
 			for '_i' from 0 to 99999 do {deleteMarkerLocal ('adminLockBoxs' + (str _i));};
@@ -4967,7 +5033,9 @@ FN_SHOW_LOG = {
 		if(isNil'fakin_epoch_grp_thread')then
 		{
 			_log = 'Fake Epoch group to nearest PlotPole - started. This might take a lot of your performance!';
-			_log call FN_SHOW_LOG;
+			systemchat _log;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			fakin_epoch_grp_thread = [] spawn {
 				while {true} do
@@ -4992,7 +5060,9 @@ FN_SHOW_LOG = {
 								{
 									Epoch_my_GroupUID = _jammerOwnerVar;
 									_log = format['Changed Epoch_my_GroupUID to %1',_jammerOwnerVar];
-									_log call FN_SHOW_LOG;
+									systemchat _log;
+									cutText [_log, 'PLAIN DOWN'];
+									hint _log;
 								};
 							};
 						};
@@ -5008,7 +5078,9 @@ FN_SHOW_LOG = {
 			Epoch_my_GroupUID=MY_Epoch_my_GroupUID;
 			
 			_log = 'Changed Epoch_my_GroupUID back to your original one';
-			_log call FN_SHOW_LOG;
+			systemchat _log;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 		};
 	};
 	adminDeadPlayer = {
@@ -5049,7 +5121,8 @@ FN_SHOW_LOG = {
 		if(markadDeadPlayer == 0)then
 		{
 			_log = '2D Map DeadPlayerMarker Enabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadDeadPlayer = 1;
 			[] spawn adminDeadPlayers;
@@ -5057,7 +5130,8 @@ FN_SHOW_LOG = {
 		else
 		{
 			_log = '2D Map DeadPlayerMarker Disabled';
-			_log call FN_SHOW_LOG;
+			cutText [_log, 'PLAIN DOWN'];
+			hint _log;
 			
 			markadDeadPlayer = 0;
 			for '_i' from 0 to 99999 do {deleteMarkerLocal ('adminDeadPlayers' + (str _i));};
@@ -5095,7 +5169,6 @@ FN_SHOW_LOG = {
 			if(_shiftState)exitWith
 			{
 				if(visibleMap)exitWith{false};
-				if(_key isEqualTo 0x05)exitWith{false};
 				_vel = velocity _obj;
 				if(_speed < 30)then
 				{
@@ -5122,33 +5195,33 @@ FN_SHOW_LOG = {
 		if(isNil 'infiSTAR_vehboost_keybind')then
 		{
 			infiSTAR_vehboost_keybind = (findDisplay 46) displayAddEventHandler ['KeyDown', '_this call fnc_infiSTAR_vehboostKeydown'];
-			'<TacticalGaming.net> Vehboost Keybinds added: SHIFT FOR SPEED - SPACEBAR TO BREAK' call FN_SHOW_LOG;
+			systemChat '<TacticalGaming.net> Vehboost Keybinds added: SHIFT FOR SPEED - SPACEBAR TO BREAK';
 		}
 		else
 		{
 			(findDisplay 46) displayRemoveEventHandler ['KeyDown',infiSTAR_vehboost_keybind];
 			infiSTAR_vehboost_keybind = nil;
-			'<TacticalGaming.net> Vehboost Keybinds removed' call FN_SHOW_LOG;
+			systemChat '<TacticalGaming.net> Vehboost Keybinds removed';
 		};
 	};
 	infiSTAR_FlyUp = {
-		_obj = cameraOn;
+		_obj = (vehicle cameraOn);
 		if(!local _obj)exitWith{};
-		if((_shift)||(_obj isKindOf 'Air'))exitWith
+		if(_this select 0 == 0)then
 		{
 			_vel = velocity _obj;
-			if(_obj isKindOf 'Air')then 
+			if(_obj==player)then 
 			{
-				_obj setVelocity [(_vel select 0),(_vel select 1),30];
+				_obj setVelocity [(_vel select 0),(_vel select 1),8];
 			}
 			else
 			{
-				_obj setVelocity [(_vel select 0),(_vel select 1),8];
+				_obj setVelocity [(_vel select 0),(_vel select 1),20];
 			};
-		};
-		if(_ctrl)exitWith
+		}
+		else
 		{
-			_obj setPos (_obj modelToWorld [0,0,3]);
+			if(_obj == cameraOn)then{player setPos (player modelToWorld [0,0,3]);};
 		};
 	};
 	fnc_Hover = {
@@ -5159,8 +5232,7 @@ FN_SHOW_LOG = {
 			if(isnil 'HoverState')then
 			{
 				HoverState = true;
-				_log = 'Now Hovering';
-				_log call FN_SHOW_LOG;
+				cutText ['Now Hovering','PLAIN DOWN'];
 				hovverthread = [] spawn {
 					_obj = (vehicle cameraOn);
 					if(!local _obj)exitWith{};
@@ -5174,8 +5246,7 @@ FN_SHOW_LOG = {
 			{
 				terminate hovverthread;
 				HoverState = nil;
-				_log = 'No longer Hovering';
-				_log call FN_SHOW_LOG;
+				cutText ['No longer Hovering','PLAIN DOWN'];
 			};
 		} else {HoverState = nil;};
 	};
@@ -5226,15 +5297,11 @@ FN_SHOW_LOG = {
 		{
 			EjectJoinTarget action ['eject',EjectJoinTarget];
 			EjectJoinTarget action ['getout',EjectJoinTarget];
-			_log = format['%1 Ejected',NameEjectJoinTarget];
-			_log call FN_SHOW_LOG;
+			cutText [format['%1 Ejected',NameEjectJoinTarget], 'PLAIN DOWN'];
 		}
 		else
 		{
-			_log = format['Get in %1 ?',NameEjectJoinTarget];
-			_log call FN_SHOW_LOG;
-			
-		_arma_bug = {
+			cutText [format['Get in %1 ?',NameEjectJoinTarget], 'PLAIN DOWN'];
 			JoinOrNotJoinIsTheQuestion = 
 			[
 				['',true],
@@ -5243,10 +5310,7 @@ FN_SHOW_LOG = {
 				['Nearest', [4], '', -5, [['expression', 'call go_in_nearestvehicle_callmevar;']], '1', '1']
 			];
 			showCommandingMenu '#USER:JoinOrNotJoinIsTheQuestion';
-		};
-			player action ['getInDriver', EjectJoinTarget];
-			_log = format['%1 NO ONE TO EJECT',NameEjectJoinTarget];
-			_log call FN_SHOW_LOG;
+			cutText [format['%1 NO ONE TO EJECT',NameEjectJoinTarget], 'PLAIN DOWN'];
 		};
 	};
 	infiSTAR_Tpdirection = {
@@ -5272,7 +5336,8 @@ FN_SHOW_LOG = {
 	fnc_startEMP = {
 		CALLED_EMP = true;
 		_log = 'Click on the Map position for the EMP!';
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	fnc_callEMP = {
 		_position = _this;
@@ -5296,7 +5361,8 @@ FN_SHOW_LOG = {
 		[_doGlobal] call admin_d0;
 		
 		_log = format['Emp called @%1!',mapGridPosition _position];
-		_log call FN_SHOW_LOG;
+		cutText [_log, 'PLAIN DOWN'];
+		hint _log;
 	};
 	_stayLocalNumber = 2077;
 	fnc_RscDisplayDebugPublic = {
@@ -5367,7 +5433,7 @@ FN_SHOW_LOG = {
 		waitUntil
 		{
 			_title = _display displayCtrl 11884;
-			_title ctrlSetText 'Debug & Admin Console - modified by TacticalGaming.net';
+			_title ctrlSetText 'Debug & Admin Console - modified by infiSTAR.de';
 			
 			_titleBox = _display displayCtrl 11892;
 			_titleBox ctrlSetText 'ENTER: CODE TO EXECUTE - BE MESSAGE - KICK/BAN REASON';
@@ -5453,7 +5519,7 @@ infiSTAR_MAIN_CODE = infiSTAR_MAIN_CODE + ([compile (preprocessFileLineNumbers '
 infiSTAR_MAIN_CODE = infiSTAR_MAIN_CODE + "
 	[] spawn {
 		waituntil { !(isNull findDisplay 46) };
-		format['%1 <TacticalGaming.net> Menu Loaded - press F1 (default Key) to open it!',time] call FN_SHOW_LOG;
+		systemChat format['%1 <TacticalGaming.net> Player Loaded Successfully!',time];
 		if(isNil 'OPEN_ADMIN_MENU_KEY')then{OPEN_ADMIN_MENU_KEY = 0x3B;};
 		fnc_redoControlsMoveObj = {
 			fnc_show_LOCAL_OBJinfo = {
@@ -5722,12 +5788,12 @@ infiSTAR_MAIN_CODE = infiSTAR_MAIN_CODE + "
 						{
 							player removeAction _id;
 							_id = -1;
-							'<TacticalGaming.net> Arsenal Action removed from player' call FN_SHOW_LOG;
+							systemChat '<TacticalGaming.net> Arsenal Action removed from player';
 						}
 						else
 						{
 							_id = player addAction ['Arsenal',{['Open',true] call BIS_fnc_arsenal;}];
-							'<TacticalGaming.net> Arsenal Action added to player' call FN_SHOW_LOG;
+							systemChat '<TacticalGaming.net> Arsenal Action added to player';
 						};
 						player setVariable ['arsenal_action_id',_id];
 					};
