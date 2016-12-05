@@ -50,11 +50,13 @@ class CfgRespawnTemplates
 #include "scripts\outlw_magRepack\MagRepack_config.hpp" // Outlaw's MagRepack
 #include "VAS\menu.hpp"									// VAS
 #include "scripts\taw_vd\GUI.h" 						// TAW View Distance
+#include "dialog\ST_HUDextra.hpp"						// STHUD
 
 class RscTitles
 {
-	#include "dialog\HUDcontrol.hpp"						// Player HUD
+	#include "dialog\HUDcontrol.hpp"					// Player HUD
 	#include "dialog\progress.hpp"						// Progress bar
+	#include "dialog\ST_HUD.hpp"							// STHUD rsc
 };
 
 //=================== Params
@@ -594,6 +596,16 @@ class CfgFunctions
 
 //=================== Misc Configs
 
+class CfgInGameUI
+{
+	class Cursor
+	{
+		select = "#(argb,1,1,1)color(0,0,0,0)";
+		outArrow = "#(argb,1,1,1)color(0,0,0,0)";
+		leader = "#(argb,1,1,1)color(0,0,0,0)";
+		mission = "#(argb,1,1,1)color(0,0,0,0)";
+	};
+};
 class CfgRoles
 {
 	#include "config\roles.hpp"
@@ -656,6 +668,51 @@ class CfgMarkers
 	class veh_respawn
 	{
 		#include "config\markers\veh_respawn.hpp"
+	};
+	class ST_STHudM_Rifleman : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Rifleman";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconMan_ca.paa";
+	};
+	class ST_STHudM_Medic : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Medic";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa";
+	};
+	class ST_STHudM_Engineer : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Engineer";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManEngineer_ca.paa";
+	};
+	class ST_STHudM_Explosive : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Explosive";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManExplosive.paa";
+	};
+	class ST_STHudM_Recon : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Recon";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManRecon.paa";
+	};
+	class ST_STHudM_AT : ST_STHudM_Base
+	{
+		name = "zzzSTHud - AT";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManAT_ca.paa";
+	};
+	class ST_STHudM_Leader : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Leader";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManLeader_ca.paa";
+	};
+	class ST_STHudM_MG : ST_STHudM_Base
+	{
+		name = "zzzSTHud - MG";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManMG_ca.paa";
+	};
+	class ST_STHudM_Officer : ST_STHudM_Base
+	{
+		name = "zzzSTHud - Officer";
+		icon = "\A3\ui_f\data\map\vehicleicons\iconManOfficer_ca.paa";
 	};
 };
 

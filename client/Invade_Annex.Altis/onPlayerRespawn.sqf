@@ -12,6 +12,8 @@ enableSentences FALSE;													// Stop talking to myself
 enableSaving [FALSE,FALSE];												// "Everything Not saved will be lost." - Nintendo 'Quit Screen' message
 player enableFatigue false;												// Disables fatigue
 
+// if (hasInterface) then {[] execVM 'scripts\sthud\init.sqf'};
+// if (hasInterface) then {[] execVM 'scripts\stgi\init.sqf'};
 //--------------------- Player actions
 
 waitUntil {player == player};

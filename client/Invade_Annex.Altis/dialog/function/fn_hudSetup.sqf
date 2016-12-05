@@ -11,7 +11,7 @@ disableSerialization;
 _display = findDisplay 46;
 _alpha = _display displayCtrl 55555;
 
-2 cutRsc ["jediHud","PLAIN"];
+3 cutRsc ["jediHud","PLAIN"];
 [] call jedi_fnc_hudUpdate;
 
 [] spawn
